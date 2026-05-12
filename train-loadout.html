@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Train Load-Out Bin Removal - STRUKTURA Group</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Montserrat', sans-serif;
+    background:#f5f5f5;
+    color:#111;
+}
+
+/* HEADER */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:90px;
+    padding:0 6%;
+    background:#050505;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+}
+
+.logo img{
+    height:60px;
+    width:auto;
+    display:block;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:30px;
+    font-size:13px;
+    font-weight:800;
+    letter-spacing:1px;
+}
+
+nav a:hover,
+nav a.active{
+    color:#d50000;
+}
+
+/* HERO */
+
+.project-hero{
+    min-height:620px;
+    background:
+        linear-gradient(90deg, rgba(0,0,0,0.88), rgba(0,0,0,0.35)),
+        url("train-loadout-hero.jpg");
+    background-size:cover;
+    background-position:center;
+    color:white;
+    display:flex;
+    align-items:center;
+    padding:150px 6% 90px;
+}
+
+.hero-content{
+    max-width:620px;
+}
+
+.hero-content h1{
+    font-size:64px;
+    line-height:1.05;
+    font-weight:900;
+    text-transform:uppercase;
+    margin-bottom:25px;
+}
+
+.red-line{
+    width:55px;
+    height:3px;
+    background:#d50000;
+    margin-bottom:25px;
+}
+
+.hero-content p{
+    font-size:18px;
+    line-height:1.8;
+    color:#eee;
+}
+
+/* INFO BAR */
+
+.info-bar{
+    width:88%;
+    margin:-70px auto 0;
+    background:#080808;
+    color:white;
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    box-shadow:0 12px 30px rgba(0,0,0,0.25);
+    position:relative;
+    z-index:5;
+}
+
+.info-box{
+    padding:35px 30px;
+    display:flex;
+    gap:18px;
+    align-items:center;
+    border-right:1px solid #333;
+}
+
+.info-box:last-child{
+    border-right:none;
+}
+
+.info-icon{
+    color:#d50000;
+    font-size:34px;
+}
+
+.info-box span{
+    display:block;
+    font-size:11px;
+    font-weight:800;
+    color:#aaa;
+    text-transform:uppercase;
+    margin-bottom:6px;
+}
+
+.info-box strong{
+    font-size:16px;
+}
+
+/* MAIN */
+
+main{
+    padding:80px 7%;
+}
+
+.section-title{
+    font-size:26px;
+    font-weight:900;
+    text-transform:uppercase;
+    margin-bottom:12px;
+}
+
+.section-line{
+    width:50px;
+    height:3px;
+    background:#d50000;
+    margin-bottom:25px;
+}
+
+/* OVERVIEW */
+
+.overview-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:90px;
+    margin-bottom:80px;
+}
+
+.overview p{
+    color:#444;
+    line-height:1.8;
+    margin-bottom:24px;
+}
+
+.features ul{
+    list-style:none;
+}
+
+.features li{
+    margin-bottom:18px;
+    color:#333;
+    font-size:16px;
+}
+
+.features li::before{
+    content:"✓";
+    color:#d50000;
+    font-weight:900;
+    margin-right:12px;
+}
+
+/* GALLERY */
+
+.gallery-section{
+    background:#f0f0f0;
+    margin:0 -7%;
+    padding:60px 7%;
+}
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:18px;
+}
+
+.gallery-card{
+    position:relative;
+    height:210px;
+    overflow:hidden;
+    background:#111;
+}
+
+.gallery-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.gallery-card span{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    background:rgba(0,0,0,0.85);
+    color:white;
+    padding:13px;
+    text-align:center;
+    font-size:12px;
+    font-weight:800;
+    text-transform:uppercase;
+}
+
+/* METHODOLOGY */
+
+.methodology{
+    padding:70px 0;
+    display:grid;
+    grid-template-columns:1fr 1.15fr;
+    gap:70px;
+    align-items:center;
+}
+
+.method-list{
+    position:relative;
+}
+
+.method-item{
+    display:grid;
+    grid-template-columns:45px 1fr;
+    gap:18px;
+    margin-bottom:25px;
+}
+
+.method-number{
+    width:28px;
+    height:28px;
+    background:#d50000;
+    color:white;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:13px;
+    font-weight:900;
+}
+
+.method-item h3{
+    font-size:16px;
+    margin-bottom:6px;
+}
+
+.method-item p{
+    color:#444;
+    line-height:1.6;
+    font-size:14px;
+}
+
+.method-image img{
+    width:100%;
+    height:430px;
+    object-fit:cover;
+    display:block;
+}
+
+/* CTA */
+
+.project-cta{
+    background:#080808;
+    color:white;
+    padding:40px 45px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
+    margin-bottom:70px;
+}
+
+.project-cta h2{
+    font-size:24px;
+    margin-bottom:8px;
+}
+
+.project-cta p{
+    color:#ddd;
+    line-height:1.6;
+}
+
+.project-cta a{
+    background:#d50000;
+    color:white;
+    text-decoration:none;
+    padding:16px 40px;
+    font-size:13px;
+    font-weight:900;
+    border-radius:2px;
+    white-space:nowrap;
+}
+
+/* FOOTER */
+
+footer{
+    background:#000;
+    color:#777;
+    text-align:center;
+    padding:30px;
+    font-size:14px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    header{
+        height:auto;
+        flex-direction:column;
+        gap:12px;
+        padding:15px;
+    }
+
+    nav{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    nav a{
+        margin:6px 10px;
+        font-size:12px;
+    }
+
+    .project-hero{
+        padding:180px 7% 90px;
+        min-height:560px;
+    }
+
+    .hero-content h1{
+        font-size:42px;
+    }
+
+    .info-bar{
+        grid-template-columns:1fr;
+        margin:-45px auto 0;
+    }
+
+    .info-box{
+        border-right:none;
+        border-bottom:1px solid #333;
+    }
+
+    .overview-grid,
+    .methodology{
+        grid-template-columns:1fr;
+        gap:40px;
+    }
+
+    .gallery-grid{
+        grid-template-columns:1fr;
+    }
+
+    .project-cta{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        <a href="index.html">
+            <img src="logo.png.png" alt="STRUKTURA Logo">
+        </a>
+    </div>
+
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="services.html.html">SERVICES</a>
+        <a class="active" href="projects.html.html">PROJECTS</a>
+        <a href="about.html">ABOUT</a>
+        <a href="contact.html">CONTACT</a>
+    </nav>
+
+</header>
+
+<section class="project-hero">
+
+    <div class="hero-content">
+        <h1>Train Load-Out<br>Bin Removal</h1>
+        <div class="red-line"></div>
+        <p>
+            Controlled dismantling using staged crane lifts, engineered lift studies
+            and sequenced structural removal methods.
+        </p>
+    </div>
+
+</section>
+
+<section class="info-bar">
+
+    <div class="info-box">
+        <div class="info-icon">👤</div>
+        <div>
+            <span>Client</span>
+            <strong>PWCS</strong>
+        </div>
+    </div>
+
+    <div class="info-box">
+        <div class="info-icon">📍</div>
+        <div>
+            <span>Location</span>
+            <strong>Newcastle NSW</strong>
+        </div>
+    </div>
+
+    <div class="info-box">
+        <div class="info-icon">⚙️</div>
+        <div>
+            <span>Scope</span>
+            <strong>Industrial Deconstruction</strong>
+        </div>
+    </div>
+
+    <div class="info-box">
+        <div class="info-icon">📅</div>
+        <div>
+            <span>Status</span>
+            <strong>Completed</strong>
+        </div>
+    </div>
+
+</section>
+
+<main>
+
+    <section class="overview-grid">
+
+        <div class="overview">
+            <h2 class="section-title">Project Overview</h2>
+            <div class="section-line"></div>
+
+            <p>
+                The train load-out facility formed part of the site’s material handling
+                infrastructure. The project involved the safe dismantling and removal of
+                the load-out bin, supporting steelwork and associated structures.
+            </p>
+
+            <p>
+                Detailed planning, lift studies and removal sequencing were undertaken
+                to ensure the works were completed safely within a live industrial
+                environment.
+            </p>
+        </div>
+
+        <div class="features">
+            <h2 class="section-title">Key Features</h2>
+            <div class="section-line"></div>
+
+            <ul>
+                <li>Engineered lift studies</li>
+                <li>Structural sequencing</li>
+                <li>Dual crane lifts</li>
+                <li>Work pack preparation</li>
+                <li>Risk management and controls</li>
+                <li>Active industrial environment</li>
+            </ul>
+        </div>
+
+    </section>
+
+    <section class="gallery-section">
+
+        <h2 class="section-title">Project Gallery</h2>
+        <div class="section-line"></div>
+
+        <div class="gallery-grid">
+
+            <div class="gallery-card">
+                <img src="gallery-before.jpg" alt="Before removal">
+                <span>Before Removal</span>
+            </div>
+
+            <div class="gallery-card">
+                <img src="gallery-dismantling.jpg" alt="Staged dismantling">
+                <span>Staged Dismantling</span>
+            </div>
+
+            <div class="gallery-card">
+                <img src="gallery-lift.jpg" alt="Dual crane lift">
+                <span>Dual Crane Lift</span>
+            </div>
+
+            <div class="gallery-card">
+                <img src="gallery-final.jpg" alt="Final site condition">
+                <span>Final Site Condition</span>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="methodology">
+
+        <div>
+            <h2 class="section-title">Removal Methodology</h2>
+            <div class="section-line"></div>
+
+            <div class="method-list">
+
+                <div class="method-item">
+                    <div class="method-number">1</div>
+                    <div>
+                        <h3>Detailed site assessment and lift studies</h3>
+                        <p>
+                            Site inspections, 3D modelling and lift studies were completed
+                            to determine the safest removal methodology.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="method-item">
+                    <div class="method-number">2</div>
+                    <div>
+                        <h3>Sequenced dismantling</h3>
+                        <p>
+                            Top-down removal of the load-out bin and associated steelwork
+                            using staged dismantling techniques.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="method-item">
+                    <div class="method-number">3</div>
+                    <div>
+                        <h3>Controlled crane operations</h3>
+                        <p>
+                            Dual crane lifts were used to safely remove large structural
+                            sections within constrained areas.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="method-item">
+                    <div class="method-number">4</div>
+                    <div>
+                        <h3>Site clean-up and load out</h3>
+                        <p>
+                            All material was processed, sorted and removed from site in
+                            accordance with environmental requirements.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="method-image">
+            <img src="methodology-image.jpg" alt="Crane lift methodology">
+        </div>
+
+    </section>
+
+    <section class="project-cta">
+
+        <div>
+            <h2>Have a Project in Mind?</h2>
+            <p>
+                Get in touch to discuss your project requirements and how STRUKTURA Group can help.
+            </p>
+        </div>
+
+        <a href="contact.html">CONTACT US</a>
+
+    </section>
+
+</main>
+
+<footer>
+    © 2026 STRUKTURA Group | Newcastle NSW
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Projects - STRUKTURA Group</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Montserrat', sans-serif;
+    background:#f7f7f7;
+    color:#111;
+}
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:18px 6%;
+    background:rgba(0,0,0,0.9);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+}
+
+.logo img{
+    height:65px;
+    width:auto;
+    display:block;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:28px;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+nav a:hover,
+nav a.active{
+    color:#d50000;
+}
+
+/* HERO */
+
+.projects-hero{
+    height:420px;
+    background:
+        linear-gradient(90deg, rgba(0,0,0,0.9), rgba(0,0,0,0.55)),
+        url("projects-hero.jpg");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    padding:120px 6% 60px;
+    color:white;
+}
+
+.hero-content{
+    max-width:700px;
+}
+
+.hero-content h1{
+    font-size:64px;
+    font-weight:800;
+    margin-bottom:20px;
+}
+
+.red-line{
+    width:55px;
+    height:3px;
+    background:#d50000;
+    margin-bottom:22px;
+}
+
+.hero-content p{
+    font-size:17px;
+    line-height:1.8;
+    color:#e5e5e5;
+}
+
+/* MAIN */
+
+.projects-wrap{
+    padding:70px 6%;
+}
+
+.section-heading{
+    margin-bottom:35px;
+}
+
+.section-heading h2{
+    font-size:26px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    margin-bottom:12px;
+}
+
+.section-heading p{
+    color:#555;
+    font-size:16px;
+}
+
+/* CURRENT PROJECTS */
+
+.current-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
+    gap:28px;
+    margin-bottom:65px;
+}
+
+.current-card{
+    background:white;
+    border:1px solid #ddd;
+    border-radius:5px;
+    padding:35px;
+    min-height:210px;
+    display:flex;
+    gap:25px;
+    align-items:flex-start;
+    box-shadow:0 8px 20px rgba(0,0,0,0.06);
+}
+
+.current-icon{
+    min-width:75px;
+    height:75px;
+    border-radius:50%;
+    background:#d50000;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:34px;
+}
+
+.current-card h3{
+    font-size:21px;
+    margin-bottom:14px;
+}
+
+.current-card p{
+    color:#555;
+    line-height:1.7;
+    margin-bottom:22px;
+}
+
+.status{
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:1px;
+    text-transform:uppercase;
+}
+
+.status::before{
+    content:"";
+    display:inline-block;
+    width:8px;
+    height:8px;
+    background:#d50000;
+    border-radius:50%;
+    margin-right:10px;
+}
+
+/* COMPLETED PROJECTS */
+
+.completed-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
+    gap:32px;
+    margin-bottom:70px;
+}
+
+.project-card{
+    background:white;
+    border:1px solid #ddd;
+    border-radius:5px;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,0,0.06);
+    transition:0.3s ease;
+}
+
+.project-card:hover{
+    transform:translateY(-6px);
+}
+
+.project-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    display:block;
+}
+
+.project-info{
+    padding:25px;
+}
+
+.project-info h3{
+    font-size:20px;
+    margin-bottom:13px;
+}
+
+.project-info p{
+    color:#555;
+    line-height:1.7;
+    margin-bottom:22px;
+}
+
+.project-info a{
+    color:#d50000;
+    text-decoration:none;
+    font-weight:800;
+    font-size:13px;
+    letter-spacing:0.5px;
+    text-transform:uppercase;
+}
+
+/* CTA */
+
+.project-cta{
+    background:
+        linear-gradient(90deg, rgba(0,0,0,0.95), rgba(20,20,20,0.95));
+    color:white;
+    padding:35px 45px;
+    border-radius:5px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.15);
+}
+
+.project-cta h2{
+    font-size:24px;
+    margin-bottom:8px;
+}
+
+.project-cta p{
+    color:#ddd;
+    line-height:1.6;
+}
+
+.project-cta a{
+    background:#d50000;
+    color:white;
+    padding:15px 35px;
+    text-decoration:none;
+    font-weight:800;
+    border-radius:4px;
+    white-space:nowrap;
+}
+
+/* FOOTER */
+
+footer{
+    background:#000;
+    color:#777;
+    text-align:center;
+    padding:30px;
+    font-size:14px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    header{
+        flex-direction:column;
+        gap:12px;
+        padding:15px;
+    }
+
+    nav{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    nav a{
+        margin:6px 10px;
+        font-size:12px;
+    }
+
+    .projects-hero{
+        height:auto;
+        padding:170px 7% 70px;
+    }
+
+    .hero-content h1{
+        font-size:46px;
+    }
+
+    .projects-wrap{
+        padding:50px 7%;
+    }
+
+    .current-card{
+        flex-direction:column;
+    }
+
+    .project-cta{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        <a href="index.html">
+            <img src="logo.png.png" alt="STRUKTURA Logo">
+        </a>
+    </div>
+
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="services.html.html">SERVICES</a>
+        <a class="active" href="projects.html.html">PROJECTS</a>
+        <a href="about.html">ABOUT</a>
+        <a href="contact.html">CONTACT</a>
+    </nav>
+
+</header>
+
+<section class="projects-hero">
+
+    <div class="hero-content">
+        <h1>Projects</h1>
+        <div class="red-line"></div>
+        <p>
+            A selection of demolition, dismantling and industrial infrastructure projects
+            supported through controlled planning, structural sequencing and practical
+            site coordination.
+        </p>
+    </div>
+
+</section>
+
+<main class="projects-wrap">
+
+    <section>
+
+        <div class="section-heading">
+            <h2>Current Projects</h2>
+            <div class="red-line"></div>
+            <p>Projects that are currently in progress.</p>
+        </div>
+
+        <div class="current-grid">
+
+            <div class="current-card">
+                <div class="current-icon">🏗️</div>
+                <div>
+                    <h3>Kooragang Industrial Deconstruction Works</h3>
+                    <p>
+                        Ongoing demolition planning, lift sequencing and site coordination
+                        support across active industrial infrastructure.
+                    </p>
+                    <span class="status">In Progress</span>
+                </div>
+            </div>
+
+            <div class="current-card">
+                <div class="current-icon">📋</div>
+                <div>
+                    <h3>Structural Removal Planning & Methodology</h3>
+                    <p>
+                        Preparation of work packs, lift planning documentation,
+                        demolition sequencing and removal methodology.
+                    </p>
+                    <span class="status">In Progress</span>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section>
+
+        <div class="section-heading">
+            <h2>Completed Projects</h2>
+            <div class="red-line"></div>
+            <p>A selection of successfully completed projects.</p>
+        </div>
+
+        <div class="completed-grid">
+
+            <div class="project-card">
+                <img src="20260423_093638.jpg" alt="Train Load-Out Bin Removal">
+                <div class="project-info">
+                    <h3>Train Load-Out Bin Removal</h3>
+                    <p>
+                        Controlled dismantling using staged crane lifts, engineered lift
+                        studies and sequenced structural removal methods.
+                    </p>
+                    <a href="train-loadout.html">View Project →</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="coal-silo.jpg" alt="Coal Silo Deconstruction">
+                <div class="project-info">
+                    <h3>Coal Silo Deconstruction</h3>
+                    <p>
+                        Top-down removal of industrial silo structures, associated
+                        steelwork and elevated access systems.
+                    </p>
+                    <a href="coal-silo.html">View Project →</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="gantry-removal.jpg" alt="Gantry Removal Works">
+                <div class="project-info">
+                    <h3>Gantry Removal Works</h3>
+                    <p>
+                        Removal of conveyor gantries and trestles within constrained
+                        industrial environments using controlled crane operations.
+                    </p>
+                    <a href="gantry-removal.html">View Project →</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="rom-demolition.jpg" alt="ROM Infrastructure Demolition">
+                <div class="project-info">
+                    <h3>ROM Infrastructure Demolition</h3>
+                    <p>
+                        Sequenced demolition of ROM feed structures, crushers and
+                        transfer systems across active industrial sites.
+                    </p>
+                    <a href="rom-demolition.html">View Project →</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="conveyor-removal.jpg" alt="Conveyor Structure Removal">
+                <div class="project-info">
+                    <h3>Conveyor Structure Removal</h3>
+                    <p>
+                        Dismantling of conveyor systems and supporting steelwork
+                        with detailed lift planning and risk controls.
+                    </p>
+                    <a href="conveyor-removal.html">View Project →</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="industrial-demo.jpg" alt="Industrial Facility Decommissioning">
+                <div class="project-info">
+                    <h3>Industrial Facility Decommissioning</h3>
+                    <p>
+                        Complete deconstruction of redundant infrastructure including
+                        buildings, structural steelwork and foundations.
+                    </p>
+                    <a href="industrial-demo.html">View Project →</a>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="project-cta">
+
+        <div>
+            <h2>Have a Project in Mind?</h2>
+            <p>
+                Get in touch to discuss project requirements and how STRUKTURA Group
+                can support planning, sequencing and site coordination.
+            </p>
+        </div>
+
+        <a href="contact.html">CONTACT US</a>
+
+    </section>
+
+</main>
+
+<footer>
+    © 2026 STRUKTURA Group | Newcastle NSW
+</footer>
+
+</body>
+</html>

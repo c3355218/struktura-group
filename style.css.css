@@ -1,0 +1,595 @@
+/* =========================
+   GLOBAL
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Montserrat',sans-serif;
+    background:#ffffff;
+    color:#111;
+    line-height:1.6;
+    overflow-x:hidden;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:114px;
+    padding:0 50px;
+    background:black;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+}
+
+.logo img{
+    height:70px;
+    width:auto;
+    display:block;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav{
+    display:flex;
+    align-items:center;
+}
+
+nav a{
+    color:rgb(239,230,230);
+    text-decoration:none;
+    margin-left:35px;
+    font-size:14px;
+    font-weight:600;
+    letter-spacing:1px;
+    transition:0.3s;
+}
+
+nav a:hover,
+nav a.active{
+    color:#d50000 !important;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+    padding-top:114px;
+    background:
+    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.72)),
+    url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1600&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding-left:20px;
+    padding-right:20px;
+}
+
+.hero-content h1{
+    font-size:82px;
+    font-weight:800;
+    margin-bottom:10px;
+    color:white;
+}
+
+.hero-content h1 span{
+    color:#d50000;
+}
+
+.hero-content p{
+    font-size:30px;
+    color:#f0f0f0;
+    margin-bottom:35px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.btn{
+    display:inline-block;
+    padding:16px 34px;
+    background:#d50000;
+    color:white;
+    text-decoration:none;
+    border-radius:4px;
+    font-weight:700;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#ff1a1a;
+    transform:translateY(-2px);
+}
+
+/* =========================
+   GENERAL SECTIONS
+========================= */
+
+.section{
+    padding:110px 9%;
+}
+
+.page-section{
+    padding:180px 9% 100px;
+    background:white;
+    color:#111;
+}
+
+.section-title{
+    text-align:center;
+    font-size:46px;
+    margin-bottom:25px;
+    color:#111;
+}
+
+.section-text{
+    max-width:950px;
+    margin:auto;
+    text-align:center;
+    font-size:18px;
+    line-height:1.9;
+    color:#444;
+}
+
+.page-title{
+    font-size:64px;
+    font-weight:800;
+    margin-bottom:25px;
+    color:#111;
+}
+
+.intro{
+    max-width:900px;
+    color:#444;
+    font-size:18px;
+    line-height:1.9;
+    margin-bottom:60px;
+}
+
+/* =========================
+   PROJECT SLIDER
+========================= */
+
+.project-slider-section{
+    position:relative;
+    padding:110px 9% 70px;
+    background:#ffffff;
+    overflow:hidden;
+}
+
+.slide-wrapper{
+    max-width:1400px;
+    margin:auto;
+    overflow:hidden;
+}
+
+.slide-track{
+    display:flex;
+    transition:transform 0.7s ease-in-out;
+}
+
+.slide-panel{
+    min-width:100%;
+    flex-shrink:0;
+    padding:0 40px;
+}
+
+.slide-arrow{
+    position:absolute;
+    top:55%;
+    transform:translateY(-50%);
+    background:none;
+    border:none;
+    color:#bdbdbd;
+    font-size:90px;
+    cursor:pointer;
+    z-index:20;
+    transition:0.3s;
+    line-height:1;
+}
+
+.slide-arrow:hover{
+    color:#d50000;
+}
+
+.left-arrow{
+    left:20px;
+}
+
+.right-arrow{
+    right:20px;
+}
+
+.project-highlight{
+    margin-top:55px;
+    height:600px;
+    position:relative;
+    overflow:hidden;
+    border-radius:12px;
+    background:#151515;
+}
+
+.project-highlight img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.project-highlight::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to top, rgba(0,0,0,0.82), transparent);
+}
+
+.project-highlight-text{
+    position:absolute;
+    left:50px;
+    bottom:50px;
+    max-width:650px;
+    z-index:2;
+    color:white;
+}
+
+.project-highlight-text h3{
+    font-size:42px;
+    margin-bottom:14px;
+}
+
+.project-highlight-text p{
+    color:#d6d6d6;
+    font-size:19px;
+}
+
+/* =========================
+   GENERAL CARDS
+========================= */
+
+.card-grid,
+.services-grid,
+.contact-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+    margin-top:55px;
+}
+
+.card,
+.service-card,
+.info-card{
+    background:#ddd5d5;
+    padding:35px;
+    border-radius:10px;
+    border-left:5px solid #d50000;
+    transition:0.3s;
+}
+
+.card:hover,
+.service-card:hover,
+.info-card:hover{
+    transform:translateY(-6px);
+    background:white;
+}
+
+.card h2,
+.card h3,
+.service-card h3{
+    font-size:24px;
+    margin-bottom:15px;
+    color:#010000;
+}
+
+.card p,
+.service-card p{
+    color:#000000;
+    line-height:1.8;
+}
+
+/* =========================
+   WHY STRUKTURA
+========================= */
+
+.why-section{
+    background:#f5f5f5;
+    padding:120px 9%;
+    text-align:center;
+}
+
+.why-section .section-title{
+    color:#111;
+    font-size:62px;
+    font-weight:800;
+    margin-bottom:20px;
+}
+
+.why-section .section-text{
+    max-width:950px;
+    margin:0 auto 80px;
+    color:#444;
+    font-size:22px;
+    line-height:1.8;
+}
+
+.why-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:28px;
+    align-items:stretch;
+}
+
+.why-card{
+    background:white;
+    border-radius:18px;
+    padding:45px 32px;
+    text-align:left;
+    border-top:4px solid #d50000;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.why-card:hover{
+    transform:translateY(-10px);
+}
+
+.why-icon{
+    width:74px;
+    height:74px;
+    background:#fff1f1;
+    border-radius:18px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:34px;
+    color:#d50000;
+    margin-bottom:28px;
+}
+
+.why-card h3{
+    font-size:34px;
+    line-height:1.1;
+    margin-bottom:22px;
+    color:#111;
+    font-weight:700;
+}
+
+.why-card p{
+    color:#555;
+    line-height:1.9;
+    font-size:17px;
+}
+
+/* =========================
+   TEAM
+========================= */
+
+.team-profile{
+    display:flex;
+    align-items:center;
+    gap:45px;
+    background:#171717;
+    padding:35px;
+    border-radius:10px;
+    border-left:5px solid #d50000;
+    margin-top:35px;
+}
+
+.team-profile img{
+    width:280px;
+    height:360px;
+    object-fit:cover;
+    border-radius:8px;
+    flex-shrink:0;
+}
+
+.team-info h3{
+    font-size:30px;
+    margin-bottom:8px;
+    color:white;
+}
+
+.team-role{
+    color:#d50000;
+    font-weight:700;
+    margin-bottom:18px;
+}
+
+.team-info p{
+    color:#bdbdbd;
+    line-height:1.8;
+}
+
+/* =========================
+   CTA
+========================= */
+
+.cta-section,
+.cta{
+    padding:90px 9%;
+    text-align:center;
+    background:#151515;
+}
+
+.cta-section h2,
+.cta h2{
+    font-size:42px;
+    margin-bottom:15px;
+    color:white;
+}
+
+.cta-section p,
+.cta p{
+    color:#bdbdbd;
+    margin-bottom:30px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:black;
+    text-align:center;
+    padding:35px;
+    color:#777;
+    font-size:14px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:1100px){
+
+    .why-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:768px){
+
+    header{
+        height:auto;
+        flex-direction:column;
+        gap:12px;
+        padding:18px;
+    }
+
+    .logo img{
+        height:55px;
+    }
+
+    nav{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    nav a{
+        margin:5px 10px;
+        font-size:12px;
+    }
+
+    .hero{
+        padding-top:140px;
+    }
+
+    .hero-content h1{
+        font-size:50px;
+    }
+
+    .hero-content p{
+        font-size:22px;
+    }
+
+    .section,
+    .page-section,
+    .project-slider-section,
+    .cta,
+    .cta-section,
+    .why-section{
+        padding:80px 30px;
+    }
+
+    .section-title,
+    .why-section .section-title{
+        font-size:38px;
+    }
+
+    .why-section .section-text{
+        font-size:18px;
+        margin-bottom:50px;
+    }
+
+    .why-grid{
+        grid-template-columns:1fr;
+    }
+
+    .why-card h3{
+        font-size:28px;
+    }
+
+    .page-title{
+        font-size:44px;
+    }
+
+    .slide-panel{
+        padding:0;
+    }
+
+    .slide-arrow{
+        font-size:55px;
+    }
+
+    .left-arrow{
+        left:5px;
+    }
+
+    .right-arrow{
+        right:5px;
+    }
+
+    .project-highlight{
+        height:420px;
+    }
+
+    .project-highlight-text{
+        left:25px;
+        bottom:25px;
+    }
+
+    .project-highlight-text h3{
+        font-size:28px;
+    }
+
+    .project-highlight-text p{
+        font-size:16px;
+    }
+
+    .team-profile{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .team-profile img{
+        width:100%;
+        height:420px;
+    }
+
+}

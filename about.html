@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About - STRUKTURA Group</title>
+
+<link href="image57.png" >
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Montserrat',sans-serif;
+    background:#0b0b0b;
+    color:white;
+    line-height:1.6;
+    overflow-x:hidden;
+}
+
+/* HEADER */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:114px;
+    padding:0 50px;
+    background:black;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+}
+
+.logo img{
+    height:70px;
+    width:auto;
+    display:block;
+}
+
+nav{
+    display:flex;
+    align-items:center;
+}
+
+nav a{
+    color:rgb(239,230,230);
+    text-decoration:none;
+    margin-left:35px;
+    font-size:14px;
+    font-weight:600;
+    letter-spacing:1px;
+    transition:0.3s;
+}
+
+nav a:hover,
+nav a.active{
+    color:#d50000;
+}
+
+/* HERO */
+
+.about-hero{
+    padding:220px 9% 120px;
+    background:
+    linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.82)),
+    url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1600&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+.about-hero h1{
+    font-size:70px;
+    margin-bottom:20px;
+    font-weight:800;
+}
+
+.about-hero h1 span{
+    color:#d50000;
+}
+
+.about-hero p{
+    max-width:850px;
+    color:#d6d6d6;
+    font-size:20px;
+    line-height:1.8;
+}
+
+/* WHITE SECTIONS */
+
+.white-section{
+    background:white;
+    color:#111;
+    padding:110px 9%;
+}
+
+.section-title{
+    font-size:46px;
+    margin-bottom:25px;
+    color:#111;
+}
+
+.section-text{
+    max-width:950px;
+    color:#444;
+    font-size:18px;
+    line-height:1.9;
+}
+
+/* WHAT WE DO CARDS */
+
+.card-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:28px;
+    margin-top:55px;
+}
+
+.card{
+    background:white;
+    border-radius:18px;
+    padding:45px 32px;
+    text-align:left;
+    border-top:4px solid #d50000;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card h3{
+    font-size:32px;
+    line-height:1.1;
+    margin-bottom:22px;
+    color:#111;
+    font-weight:700;
+}
+
+.card p{
+    color:#555;
+    line-height:1.9;
+    font-size:17px;
+}
+
+/* TEAM */
+
+.team-section{
+    background:#f5f5f5;
+    padding:110px 9%;
+}
+
+.team-section .section-title{
+    color:#111;
+}
+
+.team-profile{
+    display:flex;
+    align-items:center;
+    gap:45px;
+    background:white;
+    padding:40px;
+    border-radius:18px;
+    border-top:4px solid #d50000;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    margin-top:35px;
+    transition:0.3s;
+}
+
+.team-profile:hover{
+    transform:translateY(-8px);
+}
+
+.team-profile img{
+    width:280px;
+    height:360px;
+    object-fit:cover;
+    object-position:center top;
+    border-radius:12px;
+    flex-shrink:0;
+}
+
+.team-info h3{
+    font-size:34px;
+    margin-bottom:10px;
+    color:#111;
+    font-weight:700;
+}
+
+.team-role{
+    color:#d50000;
+    font-weight:700;
+    margin-bottom:20px;
+    font-size:17px;
+    letter-spacing:1px;
+}
+
+.team-info p{
+    color:#555;
+    font-size:17px;
+    line-height:1.9;
+}
+
+/* CTA */
+
+.cta{
+    padding:90px 9%;
+    background:#151515;
+    text-align:center;
+}
+
+.cta h2{
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.cta p{
+    color:#bdbdbd;
+    margin-bottom:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:15px 34px;
+    background:#d50000;
+    color:white;
+    text-decoration:none;
+    font-weight:700;
+    border-radius:4px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#ff1a1a;
+}
+
+/* FOOTER */
+
+footer{
+    background:black;
+    text-align:center;
+    padding:35px;
+    color:#777;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    header{
+        height:auto;
+        flex-direction:column;
+        gap:12px;
+        padding:18px;
+    }
+
+    .logo img{
+        height:55px;
+    }
+
+    nav{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    nav a{
+        margin:5px 10px;
+        font-size:12px;
+    }
+
+    .about-hero,
+    .white-section,
+    .team-section,
+    .cta{
+        padding:80px 30px;
+    }
+
+    .about-hero{
+        padding-top:170px;
+    }
+
+    .about-hero h1{
+        font-size:46px;
+    }
+
+    .about-hero p{
+        font-size:18px;
+    }
+
+    .section-title{
+        font-size:34px;
+    }
+
+    .card h3{
+        font-size:28px;
+    }
+
+    .team-profile{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:25px;
+    }
+
+    .team-profile img{
+        width:100%;
+        height:420px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        <a href="index.html">
+            <img src="logo.png.png" alt="STRUKTURA Logo">
+        </a>
+    </div>
+
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="services.html.html">SERVICES</a>
+        <a href="projects.html.html">PROJECTS</a>
+        <a class="active" href="about.html">ABOUT</a>
+        <a href="contact.html">CONTACT</a>
+    </nav>
+
+</header>
+
+<section class="about-hero">
+
+    <h1>
+        About <span>STRUKTURA</span>
+    </h1>
+
+    <p>
+        STRUKTURA Group provides demolition supervision,
+        structural deconstruction coordination and industrial
+        project support across heavy industrial environments.
+    </p>
+
+</section>
+
+<section class="white-section">
+
+    <h2 class="section-title">
+        Who Are We
+    </h2>
+
+    <p class="section-text">
+        STRUKTURA Group is built around controlled delivery,
+        practical site experience and detailed planning.
+        The company supports complex demolition and dismantling
+        projects from early methodology development through to onsite execution.
+
+        <br><br>
+
+        With experience across industrial assets including silos,
+        conveyors, gantries, load-out structures and structural steel infrastructure,
+        STRUKTURA focuses on safe sequencing, clear communication
+        and coordinated project delivery.
+    </p>
+
+</section>
+
+<section class="white-section">
+
+    <h2 class="section-title">
+        What We Do
+    </h2>
+
+    <div class="card-grid">
+
+        <div class="card">
+            <h3>Industrial Demolition</h3>
+            <p>
+                Controlled demolition planning and staged dismantling
+                for industrial and infrastructure assets.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Lift Planning</h3>
+            <p>
+                Crane studies, lift sequencing,
+                mass estimates and engineered lifting support.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Project Coordination</h3>
+            <p>
+                Site coordination, demolition documentation
+                and practical project delivery support.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="team-section">
+
+    <h2 class="section-title">
+        The STRUKTURA Team
+    </h2>
+
+    <div class="team-profile">
+
+        <img src="NOIMAGEAVA.png" alt="Viktor Nikolas">
+
+        <div class="team-info">
+            <h3>Viktor Nikolas</h3>
+
+            <div class="team-role">
+                Unrestricted Demolition Supervisor
+            </div>
+
+            <p>
+                Viktor brings extensive experience in demolition supervision,
+                structural deconstruction and industrial project delivery.
+                His role focuses on controlled demolition sequencing,
+                safe onsite execution, contractor coordination and ensuring works
+                are carried out in accordance with approved methodologies,
+                site conditions and project requirements.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="team-profile">
+
+        <img src="NOIMAGEAVA.png" alt="Pete Endecott">
+
+        <div class="team-info">
+            <h3>Pete Endecott</h3>
+
+            <div class="team-role">
+                Project Coordination
+            </div>
+
+            <p>
+                Pete supports project coordination across demolition
+                and structural dismantling works, with a focus on site planning,
+                access coordination, work sequencing and practical delivery.
+                His experience assists in managing daily site requirements,
+                coordinating trades and supporting controlled project execution.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="team-profile">
+
+        <img src="team3.jpg.jpeg" alt="Harrison Wright">
+
+        <div class="team-info">
+            <h3>Harrison Wright</h3>
+
+            <div class="team-role">
+                Engineering Cadet
+            </div>
+
+            <p>
+                Harrison Wright is a final-year Civil Engineering student at the University of Newcastle
+                with over three years of hands-on experience in the demolition industry.
+                Currently undertaking a Certificate III in Demolition to progress toward a supervisory role,
+                Harrison combines practical site knowledge with strong technical and planning capabilities.
+                His experience includes demolition methodology development, lift planning, structural sequencing,
+                safety documentation and detailed engineering-style reporting.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="cta">
+
+    <h2>
+        Controlled. Calculated. Delivered.
+    </h2>
+
+    <p>
+        Contact STRUKTURA Group for demolition
+        and structural deconstruction support.
+    </p>
+
+    <a href="contact.html" class="btn">
+        CONTACT US
+    </a>
+
+</section>
+
+<footer>
+    © 2026 STRUKTURA Group | Newcastle NSW
+</footer>
+
+</body>
+</html>
