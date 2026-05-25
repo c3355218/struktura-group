@@ -9,25 +9,169 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="style.css.css">
-
 <style>
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Montserrat',sans-serif;
+    background:#ffffff;
+    color:#111;
+    line-height:1.6;
+    overflow-x:hidden;
+}
+
 /* =========================
-   UPDATED SERVICES BOXES
+   HEADER
 ========================= */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:114px;
+    padding:0 50px;
+    background:black;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+}
+
+.logo img{
+    height:70px;
+    width:auto;
+    display:block;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav{
+    display:flex;
+    align-items:center;
+}
+
+nav a{
+    color:rgb(239,230,230);
+    text-decoration:none;
+    margin-left:35px;
+    font-size:14px;
+    font-weight:600;
+    letter-spacing:1px;
+    transition:0.3s;
+}
+
+nav a:hover,
+nav a.active{
+    color:#d50000 !important;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.services-hero{
+    min-height:520px;
+    padding:180px 9% 90px;
+    background:
+    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.72)),
+    url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1600&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    display:flex;
+    align-items:center;
+    color:white;
+}
+
+.services-hero-content{
+    max-width:850px;
+}
+
+.services-hero h1{
+    font-size:82px;
+    font-weight:800;
+    margin-bottom:10px;
+    color:white;
+}
+
+.services-hero h1 span{
+    color:#d50000;
+}
+
+.services-hero p{
+    font-size:22px;
+    color:#f0f0f0;
+    line-height:1.8;
+    max-width:850px;
+}
+
+.red-line{
+    width:90px;
+    height:4px;
+    background:#d50000;
+    margin:20px 0 28px;
+}
+
+/* =========================
+   GENERAL SECTIONS
+========================= */
+
+.section{
+    padding:110px 9%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:46px;
+    margin-bottom:25px;
+    color:#111;
+}
+
+.section-text{
+    max-width:950px;
+    margin:auto;
+    text-align:center;
+    font-size:18px;
+    line-height:1.9;
+    color:#444;
+}
+
+/* =========================
+   SERVICES GRID
+========================= */
+
+.services-section{
+    background:#ffffff;
+}
 
 .services-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:28px;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
     margin-top:55px;
 }
 
 .card{
     background:white;
     border-radius:18px;
-    padding:45px 32px;
+    padding:40px 32px;
     text-align:left;
     border-top:4px solid #d50000;
     box-shadow:0 10px 30px rgba(0,0,0,0.08);
@@ -39,9 +183,9 @@
 }
 
 .card h2{
-    font-size:30px;
-    line-height:1.15;
-    margin-bottom:22px;
+    font-size:28px;
+    line-height:1.2;
+    margin-bottom:18px;
     color:#111;
     font-weight:700;
 }
@@ -49,11 +193,11 @@
 .card p{
     color:#555;
     line-height:1.9;
-    font-size:17px;
+    font-size:16px;
 }
 
 /* =========================
-   SAFETY FIRST
+   SAFETY SECTION
 ========================= */
 
 .safety-section{
@@ -64,43 +208,35 @@
 .safety-container{
     display:grid;
     grid-template-columns:1.1fr 1fr;
-    gap:60px;
+    gap:65px;
     align-items:center;
 }
 
 .safety-left h2{
-    font-size:52px;
+    font-size:58px;
     margin-bottom:15px;
     color:#111;
-}
-
-.red-line{
-    width:80px;
-    height:4px;
-    background:#d50000;
-    margin-bottom:30px;
 }
 
 .safety-left p{
     color:#444;
     font-size:18px;
     line-height:1.9;
-    margin-bottom:20px;
+    margin-bottom:22px;
 }
 
 .safety-right{
     display:flex;
     flex-direction:column;
-    gap:25px;
+    gap:24px;
 }
 
 .safety-card{
     background:white;
     border-radius:18px;
-    padding:35px 32px;
-    text-align:left;
+    padding:35px 30px;
     border-top:4px solid #d50000;
-    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    box-shadow:0 10px 25px rgba(0,0,0,0.06);
     transition:0.3s;
 }
 
@@ -109,27 +245,133 @@
 }
 
 .safety-card h3{
+    font-size:25px;
+    margin-bottom:14px;
     color:#111;
-    font-size:26px;
-    line-height:1.15;
-    margin-bottom:16px;
-    font-weight:700;
 }
 
 .safety-card p{
     color:#555;
-    line-height:1.9;
-    font-size:17px;
+    line-height:1.8;
+    font-size:16px;
 }
 
-@media(max-width:900px){
+/* =========================
+   CTA
+========================= */
+
+.cta-section{
+    padding:90px 9%;
+    text-align:center;
+    background:#151515;
+}
+
+.cta-section h2{
+    font-size:42px;
+    margin-bottom:15px;
+    color:white;
+}
+
+.cta-section p{
+    color:#bdbdbd;
+    margin-bottom:30px;
+    max-width:850px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.btn{
+    display:inline-block;
+    padding:16px 34px;
+    background:#d50000;
+    color:white;
+    text-decoration:none;
+    border-radius:4px;
+    font-weight:700;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#ff1a1a;
+    transform:translateY(-2px);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:black;
+    text-align:center;
+    padding:35px;
+    color:#777;
+    font-size:14px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:950px){
 
     .safety-container{
         grid-template-columns:1fr;
     }
 
+}
+
+@media(max-width:768px){
+
+    header{
+        height:auto;
+        flex-direction:column;
+        gap:12px;
+        padding:18px;
+    }
+
+    .logo img{
+        height:55px;
+    }
+
+    nav{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    nav a{
+        margin:5px 10px;
+        font-size:12px;
+    }
+
+    .services-hero{
+        padding:170px 30px 80px;
+        min-height:auto;
+    }
+
+    .services-hero h1{
+        font-size:50px;
+    }
+
+    .services-hero p{
+        font-size:18px;
+    }
+
+    .section,
+    .safety-section,
+    .cta-section{
+        padding:80px 30px;
+    }
+
+    .section-title{
+        font-size:38px;
+    }
+
     .safety-left h2{
-        font-size:40px;
+        font-size:42px;
+    }
+
+    .card{
+        padding:35px 28px;
     }
 
 }
@@ -158,26 +400,101 @@
 
 </header>
 
-<section class="page-section">
+<section class="services-hero">
 
-    <h1 class="page-title">
-        Services & Capabilities
-    </h1>
+    <div class="services-hero-content">
 
-    <p class="intro">
-        STRUKTURA Group provides practical demolition support,
-        supervision and project coordination backed by industry-recognised
-        qualifications, controlled methodologies and real project
-        experience across industrial and infrastructure environments.
+        <h1>
+            <span>Services</span> & Capabilities
+        </h1>
+
+        <div class="red-line"></div>
+
+        <p>
+            STRUKTURA Group provides demolition supervision, project management,
+            lift coordination and industrial project support services backed by
+            controlled methodologies and practical site experience.
+        </p>
+
+    </div>
+
+</section>
+
+<section class="section services-section">
+
+    <h2 class="section-title">
+        Capabilities
+    </h2>
+
+    <p class="section-text">
+        Practical demolition supervision and industrial project support across
+        commercial, industrial and infrastructure environments.
     </p>
 
     <div class="services-grid">
 
         <div class="card">
-            <h2>Cert IV In Demolition</h2>
+            <h2>Project Management</h2>
             <p>
-                Formal demolition qualifications supporting compliant demolition
-                planning and supervision activities.
+                Experience coordinating projects, contractors, schedules,
+                site operations and reporting across industrial, commercial
+                and infrastructure environments.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>Unrestricted Demolition Licence</h2>
+            <p>
+                Licensed to supervise and manage unrestricted demolition
+                works across industrial, commercial and infrastructure projects.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>Restricted Demolition – 15m</h2>
+            <p>
+                Qualified for demolition activities involving structures
+                up to 15 metres in height under controlled methodologies.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>100T+ Crane Operations</h2>
+            <p>
+                Experience coordinating heavy lift operations involving
+                large mobile cranes and complex lift sequencing.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>Chemical Plant Demolition</h2>
+            <p>
+                Capability supporting demolition and decommissioning works
+                within high-risk industrial processing environments.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>Pre/Post-Tensioned Concrete</h2>
+            <p>
+                Understanding of demolition methodologies and risk controls
+                associated with pre and post-tensioned concrete structures.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>Tower Cranes</h2>
+            <p>
+                Experience working around tower crane dismantling,
+                lift coordination and high-rise construction environments.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>Structural Propping</h2>
+            <p>
+                Knowledge of temporary structural support systems,
+                staged stability management and controlled dismantling works.
             </p>
         </div>
 
@@ -198,14 +515,6 @@
         </div>
 
         <div class="card">
-            <h2>Cert IV WHS</h2>
-            <p>
-                Ongoing Work Health & Safety studies supporting site safety,
-                planning and compliance systems.
-            </p>
-        </div>
-
-        <div class="card">
             <h2>Friable Asbestos Supervisor</h2>
             <p>
                 Supervision capability for projects involving friable asbestos
@@ -217,55 +526,7 @@
             <h2>Work At Heights</h2>
             <p>
                 Certified for safe access and operations involving elevated
-                work areas.
-            </p>
-        </div>
-
-        <div class="card">
-            <h2>HR Licence</h2>
-            <p>
-                Heavy rigid vehicle licensing supporting transport
-                and project logistics requirements.
-            </p>
-        </div>
-
-        <div class="card">
-            <h2>Skid Steer Loader</h2>
-            <p>
-                Plant operation capability supporting demolition
-                and material handling activities.
-            </p>
-        </div>
-
-        <div class="card">
-            <h2>Ausgrid ESI Live Panel</h2>
-            <p>
-                Electrical supply industry awareness and live panel
-                training certification.
-            </p>
-        </div>
-
-        <div class="card">
-            <h2>Substation Entry</h2>
-            <p>
-                Approved access capability for substation and
-                high-risk industrial environments.
-            </p>
-        </div>
-
-        <div class="card">
-            <h2>GC21 Cooperative Contracting</h2>
-            <p>
-                Understanding of cooperative construction contracting
-                frameworks and delivery methods.
-            </p>
-        </div>
-
-        <div class="card">
-            <h2>First Aid Certified</h2>
-            <p>
-                Current first aid training supporting emergency
-                response preparedness on active worksites.
+                work areas and high-risk environments.
             </p>
         </div>
 
@@ -279,18 +540,21 @@
 
         <div class="safety-left">
 
-            <h2>
-                Safety First
-            </h2>
+            <h2>Safety First</h2>
 
             <div class="red-line"></div>
 
             <p>
-                At STRUKTURA Group, safety isn't a checklist — it's built into how we plan, sequence and execute every project. From the first lift plan to the final decommission, every step is controlled and documented.
+                At STRUKTURA Group, safety is integrated into every phase
+                of demolition planning and execution. From lift studies and
+                exclusion zones through to final dismantling activities,
+                every sequence is controlled, documented and reviewed.
             </p>
 
             <p>
-                Our teams work to strict site protocols, maintaining clear lines of communication between supervisors, contractors and project stakeholders throughout all stages.
+                Our approach focuses on communication, risk management and
+                practical methodology development to ensure safe project delivery
+                across high-risk industrial environments.
             </p>
 
         </div>
@@ -300,27 +564,47 @@
             <div class="safety-card">
                 <h3>Controlled Methodologies</h3>
                 <p>
-                    Structured demolition sequencing with documented execution plans reviewed before every stage.
+                    Structured demolition sequencing with documented work packs,
+                    lift plans and engineered demolition procedures.
                 </p>
             </div>
 
             <div class="safety-card">
                 <h3>Site Coordination</h3>
                 <p>
-                    Real-time communication between supervisors, operators and subcontractors to keep every crew aligned.
+                    Clear communication between supervisors, crane crews,
+                    operators and subcontractors throughout every stage.
                 </p>
             </div>
 
             <div class="safety-card">
                 <h3>Risk Management</h3>
                 <p>
-                    Proactive hazard identification, live monitoring and mandatory safety sign-offs at each project milestone.
+                    Proactive hazard identification, live monitoring and
+                    strict permit controls for high-risk activities.
                 </p>
             </div>
 
         </div>
 
     </div>
+
+</section>
+
+<section class="cta-section">
+
+    <h2>
+        Need Support On Your Next Project?
+    </h2>
+
+    <p>
+        Contact STRUKTURA Group to discuss demolition supervision,
+        project coordination and industrial support services.
+    </p>
+
+    <a href="contact.html" class="btn">
+        CONTACT US
+    </a>
 
 </section>
 
