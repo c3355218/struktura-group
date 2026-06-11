@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ROM & Truck Load-Out Removal - STRUKTURA Group</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Montserrat',sans-serif;
+    background:#ffffff;
+    color:#111;
+    line-height:1.6;
+    overflow-x:hidden;
+}
+
+/* HEADER */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:114px;
+    padding:0 50px;
+    background:black;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+}
+
+.logo img{
+    height:70px;
+    width:auto;
+    display:block;
+}
+
+nav{
+    display:flex;
+    align-items:center;
+}
+
+nav a{
+    color:rgb(239,230,230);
+    text-decoration:none;
+    margin-left:35px;
+    font-size:14px;
+    font-weight:600;
+    letter-spacing:1px;
+    transition:0.3s;
+}
+
+nav a:hover,
+nav a.active{
+    color:#d50000 !important;
+}
+
+/* HERO */
+
+.project-hero{
+    min-height:620px;
+    padding:180px 9% 90px;
+    background:
+    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.72)),
+    url("truckhero.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    display:flex;
+    align-items:center;
+    color:white;
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.hero-content h1{
+    font-size:72px;
+    line-height:1.08;
+    font-weight:800;
+    text-transform:uppercase;
+    margin-bottom:10px;
+}
+
+.red-line{
+    width:90px;
+    height:4px;
+    background:#d50000;
+    margin:20px 0 28px;
+}
+
+.hero-content p{
+    font-size:22px;
+    color:#f0f0f0;
+    line-height:1.8;
+    max-width:850px;
+}
+
+/* INFO BAR */
+
+.info-bar{
+    width:88%;
+    margin:-70px auto 0;
+    background:#080808;
+    color:white;
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    box-shadow:0 12px 30px rgba(0,0,0,0.25);
+    position:relative;
+    z-index:5;
+}
+
+.info-box{
+    padding:35px 30px;
+    display:flex;
+    gap:18px;
+    align-items:center;
+    border-right:1px solid #333;
+}
+
+.info-box:last-child{
+    border-right:none;
+}
+
+.info-icon{
+    color:#d50000;
+    font-size:34px;
+}
+
+.info-box span{
+    display:block;
+    font-size:11px;
+    font-weight:800;
+    color:#aaa;
+    text-transform:uppercase;
+    margin-bottom:6px;
+}
+
+.info-box strong{
+    font-size:16px;
+}
+
+/* MAIN */
+
+main{
+    padding:90px 9%;
+}
+
+.section-title{
+    font-size:38px;
+    font-weight:800;
+    text-transform:uppercase;
+    margin-bottom:12px;
+}
+
+.section-line{
+    width:90px;
+    height:4px;
+    background:#d50000;
+    margin:20px 0 28px;
+}
+
+/* OVERVIEW */
+
+.overview-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:90px;
+    margin-bottom:90px;
+}
+
+.overview p{
+    color:#444;
+    line-height:1.9;
+    margin-bottom:24px;
+    font-size:16px;
+}
+
+.features ul{
+    list-style:none;
+}
+
+.features li{
+    margin-bottom:18px;
+    color:#333;
+    font-size:16px;
+}
+
+.features li::before{
+    content:"✓";
+    color:#d50000;
+    font-weight:900;
+    margin-right:12px;
+}
+
+/* GALLERY */
+
+.gallery-section{
+    background:#f5f5f5;
+    margin:0 -9%;
+    padding:90px 9%;
+}
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:25px;
+}
+
+.gallery-card{
+    height:240px;
+    overflow:hidden;
+    background:#111;
+    border-radius:18px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.gallery-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+/* METHODOLOGY */
+
+.methodology{
+    padding:90px 0;
+    display:grid;
+    grid-template-columns:1fr 1.15fr;
+    gap:70px;
+    align-items:center;
+}
+
+.method-item{
+    display:grid;
+    grid-template-columns:45px 1fr;
+    gap:18px;
+    margin-bottom:25px;
+}
+
+.method-number{
+    width:34px;
+    height:34px;
+    background:#d50000;
+    color:white;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:13px;
+    font-weight:900;
+}
+
+.method-item h3{
+    font-size:18px;
+    margin-bottom:6px;
+    font-weight:700;
+}
+
+.method-item p{
+    color:#444;
+    line-height:1.8;
+    font-size:15px;
+}
+
+.method-image img{
+    width:100%;
+    height:430px;
+    object-fit:cover;
+    display:block;
+    border-radius:18px;
+}
+
+/* CTA */
+
+.project-cta{
+    padding:90px 9%;
+    text-align:center;
+    background:#151515;
+    margin:0 -9%;
+}
+
+.project-cta h2{
+    font-size:42px;
+    margin-bottom:15px;
+    color:white;
+}
+
+.project-cta p{
+    color:#bdbdbd;
+    margin-bottom:30px;
+    max-width:850px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.project-cta a{
+    display:inline-block;
+    padding:16px 34px;
+    background:#d50000;
+    color:white;
+    text-decoration:none;
+    border-radius:4px;
+    font-weight:700;
+    transition:0.3s;
+}
+
+.project-cta a:hover{
+    background:#ff1a1a;
+    transform:translateY(-2px);
+}
+
+/* FOOTER */
+
+footer{
+    background:black;
+    text-align:center;
+    padding:35px;
+    color:#777;
+    font-size:14px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+header{
+    height:auto;
+    flex-direction:column;
+    gap:12px;
+    padding:18px;
+}
+
+.logo img{
+    height:55px;
+}
+
+nav{
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+nav a{
+    margin:5px 10px;
+    font-size:12px;
+}
+
+.project-hero{
+    padding:170px 30px 80px;
+    min-height:auto;
+}
+
+.hero-content h1{
+    font-size:44px;
+}
+
+.hero-content p{
+    font-size:18px;
+}
+
+main{
+    padding:80px 30px;
+}
+
+.info-bar{
+    grid-template-columns:1fr;
+    margin:-45px auto 0;
+}
+
+.info-box{
+    border-right:none;
+    border-bottom:1px solid #333;
+}
+
+.overview-grid,
+.methodology{
+    grid-template-columns:1fr;
+    gap:40px;
+}
+
+.gallery-section{
+    margin:0 -30px;
+    padding:80px 30px;
+}
+
+.gallery-grid{
+    grid-template-columns:1fr;
+}
+
+.project-cta{
+    margin:0 -30px;
+    padding:80px 30px;
+}
+
+.project-cta h2{
+    font-size:36px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+    <a href="index.html">
+        <img src="logo.png.png" alt="STRUKTURA Logo">
+    </a>
+</div>
+
+<nav>
+    <a href="index.html">HOME</a>
+    <a href="services.html.html">SERVICES</a>
+    <a class="active" href="projects.html.html">PROJECTS</a>
+    <a href="about.html">ABOUT</a>
+    <a href="contact.html">CONTACT</a>
+</nav>
+
+</header>
+
+<section class="project-hero">
+
+<div class="hero-content">
+    <h1>ROM & Truck<br>Load-Out Removal</h1>
+
+    <div class="red-line"></div>
+
+    <p>
+         Demolition of ROM crushing, conveying and truck load-out infrastructure
+        at Whitehaven Coal's Werris Creek Mine.
+    </p>
+</div>
+
+</section>
+
+<section class="info-bar">
+
+<div class="info-box">
+    <div class="info-icon">👤</div>
+    <div>
+        <span>Client</span>
+        <strong>Whitehaven Coal</strong>
+    </div>
+</div>
+
+<div class="info-box">
+    <div class="info-icon">📍</div>
+    <div>
+        <span>Location</span>
+        <strong>Werris Creek NSW</strong>
+    </div>
+</div>
+
+<div class="info-box">
+    <div class="info-icon">⚙️</div>
+    <div>
+        <span>Scope</span>
+        <strong>ROM / Truck Load-Out</strong>
+    </div>
+</div>
+
+<div class="info-box">
+    <div class="info-icon">📅</div>
+    <div>
+        <span>Status</span>
+        <strong>Completed</strong>
+    </div>
+</div>
+
+</section>
+
+<main>
+
+<section class="overview-grid">
+
+<div class="overview">
+    <h2 class="section-title">Project Overview</h2>
+    <div class="section-line"></div>
+
+    <p>
+        The ROM and Truck Load-Out works formed part of the removal of redundant
+        coal handling infrastructure at Whitehaven Coal’s Werris Creek Mine. The
+        scope included the dismantling of ROM crushing systems, conveyor structures,
+        gantries, trestles, mechanical components and the truck load-out bin.
+    </p>
+
+    <p>
+        Works were completed using a controlled deconstruction sequence involving
+        isolation, hot works, mechanical separation, crane-assisted lifts and
+        progressive dismantling from the ROM feed and crushing area through to the
+        truck load-out silo.
+    </p>
+</div>
+
+<div class="features">
+    <h2 class="section-title">Key Features</h2>
+    <div class="section-line"></div>
+
+    <ul>
+    <li>ROM feed and crushing area removal</li>
+    <li>Feeder breaker and connected equipment removal</li>
+    <li>Conveyor gantry and trestle deconstruction</li>
+    <li>Truck load-out bin roof and platform removal</li>
+    <li>Dual crane lifting operations</li>
+    <li>Hot works and mechanical separation</li>
+    <li>Lift studies, SWMS and demolition planning</li>
+    <li>Active mine site coordination</li>
+</ul>
+</div>
+
+</section>
+
+<section class="gallery-section">
+
+<h2 class="section-title">Project Gallery</h2>
+<div class="section-line"></div>
+
+<div class="gallery-grid">
+
+    <div class="gallery-card">
+        <img src="Truck1.jpg" alt="ROM and truck load-out removal">
+    </div>
+
+    <div class="gallery-card">
+        <img src="WC_TopGrantry2.jpeg" alt="Truck load-out gantry removal">
+    </div>
+
+    <div class="gallery-card">
+        <img src="Truck2.jpeg" alt="Whitehaven Coal structural removal">
+    </div>
+
+    <div class="gallery-card">
+        <img src="Truck4.JPG" alt="Industrial deconstruction works">
+    </div>
+
+</div>
+
+</section>
+
+<section class="methodology">
+
+<div>
+    <h2 class="section-title">Removal Methodology</h2>
+    <div class="section-line"></div>
+
+   <div class="method-item">
+    <div class="method-number">1</div>
+    <div>
+        <h3>ROM feed and crushing area</h3>
+        <p>
+            Demolition commenced at the ROM feed and crushing region, including
+            removal of the feed hopper, feeder breaker and connected equipment
+            after separation from the conveyor system.
+        </p>
+    </div>
+</div>
+
+<div class="method-item">
+    <div class="method-number">2</div>
+    <div>
+        <h3>Conveyor and gantry removal</h3>
+        <p>
+            Conveyor structures were removed progressively from left to right,
+            with Gantry 1 removed first before the remaining gantries and trestles
+            were dismantled sequentially toward the load-out silo.
+        </p>
+    </div>
+</div>
+
+<div class="method-item">
+    <div class="method-number">3</div>
+    <div>
+        <h3>Dual crane lifting</h3>
+        <p>
+            Dual crane lifts were used where required to maintain structural
+            control, reduce torsional movement and safely lower large sections
+            into designated laydown areas.
+        </p>
+    </div>
+</div>
+
+<div class="method-item">
+    <div class="method-number">4</div>
+    <div>
+        <h3>Truck load-out bin demolition</h3>
+        <p>
+            The truck load-out bin removal commenced with the upper roof and
+            platform structure, using controlled hot works, mechanical separation
+            and rigging installation prior to lifting.
+        </p>
+    </div>
+</div>
+
+<div class="method-image">
+    <img src="methodology-image.jpg" alt="ROM and truck load-out removal methodology">
+</div>
+
+</section>
+
+<section class="project-cta">
+
+<h2>Have a Project in Mind?</h2>
+
+<p>
+    Get in touch to discuss project requirements and how STRUKTURA Group
+    can support planning, sequencing and site coordination.
+</p>
+
+<a href="contact.html">CONTACT US</a>
+
+</section>
+
+</main>
+
+<footer>
+© 2026 STRUKTURA Group | Newcastle NSW
+</footer>
+
+</body>
+</html>
