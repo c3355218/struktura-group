@@ -454,60 +454,61 @@ footer span{
 
     <div class="form-section">
 
-        <div class="form-info">
-            <h3>MAKE AN ENQUIRY</h3>
-            <p>
-                Submit your details and a short description of your enquiry.
-                
-            </p>
-        </div>
+    <div class="form-info">
+        <h3>MAKE AN ENQUIRY</h3>
+        <p>
+            Submit your details and a short description of your enquiry.
+        </p>
+    </div>
 
-        <!-- 
-            IMPORTANT:
-            Replace YOUR_FORMSPREE_LINK_HERE with your real form link.
-            Example: https://formspree.io/f/yourcode
-        -->
-        <form class="contact-form" action="YOUR_FORMSPREE_LINK_HERE" method="POST">
+    <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
 
-            <div class="form-row">
+        <input type="hidden" name="access_key" value="a0acc950-d72f-41fc-a4d2-ce144cf305d5">
 
-                <div class="form-group">
-                    <label for="name">NAME</label>
-                    <input type="text" id="name" name="name" placeholder="Your name" required>
-                </div>
+        <input type="hidden" name="subject" value="New Website Enquiry - STRUKTURA Group">
 
-                <div class="form-group">
-                    <label for="company">COMPANY</label>
-                    <input type="text" id="company" name="company" placeholder="Company name">
-                </div>
+        <input type="hidden" name="from_name" value="STRUKTURA Group Website">
 
-            </div>
+        <input type="checkbox" name="botcheck" style="display:none;">
 
-            <div class="form-row">
+        <div class="form-row">
 
-                <div class="form-group">
-                    <label for="email">EMAIL</label>
-                    <input type="email" id="email" name="email" placeholder="Your email" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="phone">PHONE</label>
-                    <input type="tel" id="phone" name="phone" placeholder="Your phone number">
-                </div>
-
+            <div class="form-group">
+                <label for="name">NAME</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required>
             </div>
 
             <div class="form-group">
-                <label for="message">MESSAGE</label>
-                <textarea id="message" name="message" placeholder="Tell us about your enquiry" required></textarea>
+                <label for="company">COMPANY</label>
+                <input type="text" id="company" name="company" placeholder="Company name">
             </div>
 
-            <button class="btn" type="submit">SUBMIT ENQUIRY</button>
+        </div>
 
-        </form>
+        <div class="form-row">
 
-    </div>
+            <div class="form-group">
+                <label for="email">EMAIL</label>
+                <input type="email" id="email" name="email" placeholder="Your email" required>
+            </div>
 
+            <div class="form-group">
+                <label for="phone">PHONE</label>
+                <input type="tel" id="phone" name="phone" placeholder="Your phone number">
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <label for="message">MESSAGE</label>
+            <textarea id="message" name="message" placeholder="Tell us about your enquiry" required></textarea>
+        </div>
+
+        <button class="btn" type="submit">SUBMIT ENQUIRY</button>
+
+    </form>
+
+</div>
   
 
 </section>
