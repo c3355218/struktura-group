@@ -8,6 +8,7 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="icon" href="struktura_favicon.ico">
+
 <style>
 *{
     margin:0;
@@ -120,7 +121,7 @@ nav a.active{
 .intro{
     text-align:center;
     color:#555;
-    max-width:750px;
+    max-width:850px;
     margin:0 auto 60px;
     line-height:1.9;
     font-size:18px;
@@ -128,9 +129,9 @@ nav a.active{
 
 .contact-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
     gap:30px;
-    margin-bottom:50px;
+    margin-bottom:60px;
 }
 
 /* INFO CARDS */
@@ -166,18 +167,118 @@ nav a.active{
 .info-card a,
 .info-card p{
     color:#111;
-    font-size:18px;
+    font-size:17px;
     font-weight:700;
     text-decoration:none;
+    line-height:1.7;
 }
 
 .info-card a:hover{
     color:#d50000;
 }
 
+/* FORM SECTION */
+
+.form-section{
+    display:grid;
+    grid-template-columns:1fr 1.2fr;
+    gap:40px;
+    align-items:start;
+    margin-top:30px;
+}
+
+.form-info{
+    background:#111;
+    color:white;
+    padding:45px;
+    border-radius:10px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.12);
+}
+
+.form-info h3{
+    font-size:32px;
+    margin-bottom:18px;
+}
+
+.form-info p{
+    color:#d6d6d6;
+    line-height:1.9;
+    font-size:16px;
+}
+
+.contact-form{
+    background:#f8f8f8;
+    padding:45px;
+    border-radius:10px;
+    border-left:5px solid #d50000;
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+}
+
+.form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.form-group{
+    margin-bottom:22px;
+}
+
+.form-group label{
+    display:block;
+    font-size:13px;
+    font-weight:700;
+    color:#333;
+    margin-bottom:8px;
+    letter-spacing:0.5px;
+}
+
+.form-group input,
+.form-group textarea{
+    width:100%;
+    padding:15px;
+    border:1px solid #d0d0d0;
+    border-radius:5px;
+    font-family:'Montserrat',sans-serif;
+    font-size:15px;
+    outline:none;
+    background:white;
+}
+
+.form-group input:focus,
+.form-group textarea:focus{
+    border-color:#d50000;
+}
+
+.form-group textarea{
+    min-height:150px;
+    resize:vertical;
+}
+
+.btn{
+    display:inline-block;
+    background:#d50000;
+    color:white;
+    border:none;
+    text-decoration:none;
+    padding:16px 38px;
+    border-radius:4px;
+    font-weight:700;
+    transition:0.3s;
+    cursor:pointer;
+    font-family:'Montserrat',sans-serif;
+    font-size:14px;
+}
+
+.btn:hover{
+    background:#ff1a1a;
+    transform:translateY(-2px);
+}
+
 /* CTA */
 
 .cta-box{
+    margin-top:60px;
     background:#f8f8f8;
     border-left:5px solid #d50000;
     padding:45px;
@@ -200,23 +301,6 @@ nav a.active{
     line-height:1.8;
 }
 
-.btn{
-    display:inline-block;
-    background:#d50000;
-    color:white;
-    text-decoration:none;
-    padding:16px 38px;
-    border-radius:4px;
-    font-weight:700;
-    transition:0.3s;
-    white-space:nowrap;
-}
-
-.btn:hover{
-    background:#ff1a1a;
-    transform:translateY(-2px);
-}
-
 /* FOOTER */
 
 footer{
@@ -232,6 +316,14 @@ footer span{
 }
 
 /* MOBILE */
+
+@media(max-width:900px){
+
+    .form-section{
+        grid-template-columns:1fr;
+    }
+
+}
 
 @media(max-width:768px){
 
@@ -271,6 +363,16 @@ footer span{
 
     .brand-title{
         font-size:34px;
+    }
+
+    .form-row{
+        grid-template-columns:1fr;
+        gap:0;
+    }
+
+    .form-info,
+    .contact-form{
+        padding:32px 25px;
     }
 
     .cta-box{
@@ -319,17 +421,13 @@ footer span{
     </h2>
 
     <p class="intro">
-        Engineering-focused demolition and structural deconstruction
-        solutions across industrial and infrastructure sectors.
+        For project enquiries, demolition and deconstruction support, or general information,
+        contact STRUKTURA Group using the details below or submit an enquiry through the contact form.
     </p>
 
     <div class="contact-grid">
 
-        <div class="info-card">
-            <div class="icon">☎</div>
-            <h3>PHONE</h3>
-            <a href="tel:+61427494534">+61 401 038 052</a>
-        </div>
+        <div class="info-card"> <div class="icon">☎</div> <h3>PHONE</h3> <a href="tel:+61427494534">+61 401 038 052</a> </div>
 
         <div class="info-card">
             <div class="icon">✉</div>
@@ -341,30 +439,76 @@ footer span{
 
         <div class="info-card">
             <div class="icon">⌖</div>
-            <h3>LOCATION</h3>
-            <a href="https://maps.google.com/?q=Newcastle+NSW+Australia" target="_blank">
-                <P>Head Office</P>
-                <P>Newcastle, NSW, Australia</P>
-            </a>
+            <h3>HEAD OFFICE</h3>
+            <p>Newcastle, NSW, Australia</p>
         </div>
 
-    </div>e
+        <div class="info-card">
+            <div class="icon">▣</div>
+            <h3>POSTAL ADDRESS</h3>
+            <p>PO Box 191</p>
+            <p>Waratah NSW</p>
+        </div>
 
-    <div class="cta-box">
+    </div>
 
-        <div>
-            <h3>READY TO START YOUR NEXT PROJECT?</h3>
+    <div class="form-section">
+
+        <div class="form-info">
+            <h3>MAKE AN ENQUIRY</h3>
             <p>
-                Contact us today to discuss how STRUKTURA Group
-                can support your project.
+                Submit your details and a short description of your enquiry.
+                
             </p>
         </div>
 
-        <a class="btn" href="mailto:projects@strukturagroup.com.au">
-            GET IN TOUCH
-        </a>
+        <!-- 
+            IMPORTANT:
+            Replace YOUR_FORMSPREE_LINK_HERE with your real form link.
+            Example: https://formspree.io/f/yourcode
+        -->
+        <form class="contact-form" action="YOUR_FORMSPREE_LINK_HERE" method="POST">
+
+            <div class="form-row">
+
+                <div class="form-group">
+                    <label for="name">NAME</label>
+                    <input type="text" id="name" name="name" placeholder="Your name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="company">COMPANY</label>
+                    <input type="text" id="company" name="company" placeholder="Company name">
+                </div>
+
+            </div>
+
+            <div class="form-row">
+
+                <div class="form-group">
+                    <label for="email">EMAIL</label>
+                    <input type="email" id="email" name="email" placeholder="Your email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">PHONE</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Your phone number">
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label for="message">MESSAGE</label>
+                <textarea id="message" name="message" placeholder="Tell us about your enquiry" required></textarea>
+            </div>
+
+            <button class="btn" type="submit">SUBMIT ENQUIRY</button>
+
+        </form>
 
     </div>
+
+  
 
 </section>
 
@@ -373,4 +517,3 @@ footer span{
 </footer>
 
 </body>
-</html>
