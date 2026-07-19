@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -7,14 +8,18 @@
 
 <title>STRUKTURA Group</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+>
+
 <link rel="icon" href="struktura_favicon.ico">
 
 <style>
 
-/* =========================
+/* ==================================================
 GLOBAL
-========================= */
+================================================== */
 
 *{
     margin:0;
@@ -30,17 +35,18 @@ body{
     font-family:'Montserrat',sans-serif;
     background:#ffffff;
     color:#111;
-    overflow-x:hidden;
     line-height:1.6;
+    overflow-x:hidden;
 }
 
 img{
+    display:block;
     max-width:100%;
 }
 
-/* =========================
+/* ==================================================
 HEADER
-========================= */
+================================================== */
 
 header{
     position:fixed;
@@ -49,7 +55,7 @@ header{
     width:100%;
     height:114px;
     padding:0 55px;
-    background:#000;
+    background:#000000;
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -63,14 +69,13 @@ header{
 }
 
 .logo img{
-    height:70px;
     width:auto;
-    display:block;
+    height:70px;
 }
 
-/* =========================
+/* ==================================================
 NAVIGATION
-========================= */
+================================================== */
 
 nav{
     display:flex;
@@ -78,13 +83,13 @@ nav{
 }
 
 nav a{
+    margin-left:35px;
     color:#f0f0f0;
     text-decoration:none;
-    margin-left:35px;
     font-size:14px;
     font-weight:600;
     letter-spacing:1px;
-    transition:0.3s;
+    transition:color 0.3s ease;
 }
 
 nav a:hover,
@@ -92,19 +97,20 @@ nav a.active{
     color:#d50000;
 }
 
-/* =========================
+/* ==================================================
 HERO
-========================= */
+================================================== */
 
 .hero{
     min-height:100vh;
-    padding-top:114px;
-    padding-left:20px;
-    padding-right:20px;
+    padding:114px 20px 0;
 
     background:
-    linear-gradient(rgba(0,0,0,0.60), rgba(0,0,0,0.78)),
-    url("Images/steelframefrontpage2.png");
+        linear-gradient(
+            rgba(0,0,0,0.60),
+            rgba(0,0,0,0.78)
+        ),
+        url("Images/steelframefrontpage2.png");
 
     background-size:cover;
     background-position:center;
@@ -117,16 +123,16 @@ HERO
 }
 
 .hero-content{
-    max-width:1200px;
     width:100%;
+    max-width:1200px;
 }
 
 .hero-content h1{
+    margin-bottom:15px;
+    color:#ffffff;
     font-size:110px;
     font-weight:800;
-    color:white;
     line-height:1;
-    margin-bottom:15px;
 }
 
 .hero-content h1 span{
@@ -136,20 +142,20 @@ HERO
 .hero-line{
     width:120px;
     height:5px;
-    background:#d50000;
     margin:0 auto 28px;
+    background:#d50000;
 }
 
 .hero-content p{
-    font-size:34px;
-    color:#f0f0f0;
     margin-bottom:40px;
+    color:#f0f0f0;
+    font-size:34px;
     font-weight:400;
 }
 
-/* =========================
+/* ==================================================
 BUTTONS
-========================= */
+================================================== */
 
 .hero-buttons{
     display:flex;
@@ -161,13 +167,15 @@ BUTTONS
 .btn{
     display:inline-block;
     padding:17px 38px;
-    background:white;
-    color:black;
+    background:#ffffff;
+    color:#000000;
     text-decoration:none;
     border-radius:4px;
     font-weight:700;
-    transition:0.3s;
     letter-spacing:0.5px;
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
 }
 
 .btn:hover{
@@ -175,72 +183,133 @@ BUTTONS
     transform:translateY(-2px);
 }
 
-/* =========================
-SECTIONS
-========================= */
-
-.section{
-    padding:120px 9%;
-}
+/* ==================================================
+GENERAL SECTIONS
+================================================== */
 
 .section-title{
+    margin-bottom:25px;
+    color:#111111;
     text-align:center;
     font-size:56px;
     font-weight:800;
-    margin-bottom:25px;
-    color:#111;
     line-height:1.15;
 }
 
 .section-text{
     max-width:950px;
-    margin:auto;
+    margin:0 auto;
+    color:#444444;
     text-align:center;
     font-size:20px;
     line-height:1.9;
-    color:#444;
 }
 
-/* =========================
-PROJECT HIGHLIGHTS
-========================= */
+/* ==================================================
+PROJECT SLIDER
+================================================== */
 
 .project-slider-section{
     position:relative;
-    padding:120px 9% 80px;
+    padding:120px 9% 90px;
     background:#ffffff;
     overflow:hidden;
 }
 
 .slide-wrapper{
+    width:100%;
     max-width:1450px;
-    margin:auto;
+    margin:0 auto;
     overflow:hidden;
 }
 
 .slide-track{
     display:flex;
+    width:100%;
     transition:transform 0.7s ease-in-out;
 }
 
 .slide-panel{
     min-width:100%;
-    flex-shrink:0;
+    width:100%;
+    flex:0 0 100%;
     padding:0 40px;
 }
 
+/* ==================================================
+DESKTOP PROJECT IMAGE
+================================================== */
+
+.project-highlight{
+    position:relative;
+    width:100%;
+    height:650px;
+    margin-top:60px;
+    background:#151515;
+    border-radius:18px;
+    box-shadow:0 10px 40px rgba(0,0,0,0.12);
+    overflow:hidden;
+}
+
+.project-highlight img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+}
+
+.project-highlight::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,0.92) 0%,
+        rgba(0,0,0,0.48) 42%,
+        rgba(0,0,0,0.05) 75%
+    );
+}
+
+.project-highlight-text{
+    position:absolute;
+    left:55px;
+    right:55px;
+    bottom:55px;
+    z-index:2;
+    max-width:760px;
+    color:#ffffff;
+}
+
+.project-highlight-text h3{
+    margin-bottom:16px;
+    font-size:48px;
+    font-weight:800;
+    line-height:1.15;
+}
+
+.project-highlight-text p{
+    color:#d6d6d6;
+    font-size:20px;
+    line-height:1.8;
+}
+
+/* ==================================================
+SLIDER ARROWS
+================================================== */
+
 .slide-arrow{
     position:absolute;
-    top:58%;
+    top:60%;
+    z-index:20;
     transform:translateY(-50%);
+    padding:0;
     background:none;
     border:none;
     color:#c2c2c2;
     font-size:90px;
-    cursor:pointer;
-    z-index:20;
-    transition:0.3s;
     line-height:1;
+    cursor:pointer;
+    transition:color 0.3s ease;
 }
 
 .slide-arrow:hover{
@@ -255,66 +324,13 @@ PROJECT HIGHLIGHTS
     right:18px;
 }
 
-.project-highlight{
-    margin-top:60px;
-    height:650px;
-    position:relative;
-    overflow:hidden;
-    border-radius:18px;
-    background:#151515;
-    box-shadow:0 10px 40px rgba(0,0,0,0.12);
-}
-
-.project-highlight img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    object-position:center;
-    display:block;
-}
-
-.project-highlight::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:linear-gradient(
-        to top,
-        rgba(0,0,0,0.9) 0%,
-        rgba(0,0,0,0.45) 45%,
-        rgba(0,0,0,0.05) 75%
-    );
-}
-
-.project-highlight-text{
-    position:absolute;
-    left:55px;
-    right:55px;
-    bottom:55px;
-    max-width:700px;
-    z-index:2;
-    color:white;
-}
-
-.project-highlight-text h3{
-    font-size:48px;
-    margin-bottom:16px;
-    font-weight:800;
-    line-height:1.15;
-}
-
-.project-highlight-text p{
-    color:#d6d6d6;
-    font-size:20px;
-    line-height:1.8;
-}
-
-/* =========================
+/* ==================================================
 WHY STRUKTURA
-========================= */
+================================================== */
 
 .why-section{
-    background:#f5f5f5;
     padding:120px 9%;
+    background:#f5f5f5;
     text-align:center;
 }
 
@@ -326,13 +342,13 @@ WHY STRUKTURA
 }
 
 .why-card{
-    background:white;
-    border-radius:18px;
     padding:45px 35px;
-    text-align:left;
+    background:#ffffff;
     border-top:4px solid #d50000;
+    border-radius:18px;
     box-shadow:0 10px 30px rgba(0,0,0,0.08);
-    transition:0.3s;
+    text-align:left;
+    transition:transform 0.3s ease;
 }
 
 .why-card:hover{
@@ -342,108 +358,111 @@ WHY STRUKTURA
 .why-icon{
     width:74px;
     height:74px;
+    margin-bottom:28px;
     background:#fff1f1;
     border-radius:18px;
     display:flex;
     justify-content:center;
     align-items:center;
     font-size:34px;
-    color:#d50000;
-    margin-bottom:28px;
 }
 
 .why-card h3{
-    font-size:32px;
-    line-height:1.1;
     margin-bottom:20px;
-    color:#111;
+    color:#111111;
+    font-size:32px;
     font-weight:700;
+    line-height:1.1;
 }
 
 .why-card p{
-    color:#555;
-    line-height:1.9;
+    color:#555555;
     font-size:17px;
+    line-height:1.9;
 }
 
-/* =========================
-CTA
-========================= */
+/* ==================================================
+CALL TO ACTION
+================================================== */
 
 .cta-section{
     padding:100px 9%;
-    text-align:center;
     background:#151515;
+    text-align:center;
 }
 
 .cta-section h2{
-    font-size:50px;
     margin-bottom:18px;
-    color:white;
+    color:#ffffff;
+    font-size:50px;
     line-height:1.2;
 }
 
 .cta-section p{
-    color:#bdbdbd;
     margin-bottom:35px;
+    color:#bdbdbd;
     font-size:19px;
 }
 
+/* ==================================================
+FOOTER
+================================================== */
+
 footer{
-    background:black;
-    text-align:center;
     padding:35px 20px;
-    color:#777;
+    background:#000000;
+    color:#777777;
+    text-align:center;
     font-size:14px;
 }
 
-/* =========================
+/* ==================================================
 TABLET
-========================= */
+================================================== */
 
 @media(max-width:1100px){
+
+    .hero-content h1{
+        font-size:82px;
+    }
 
     .why-grid{
         grid-template-columns:repeat(2,1fr);
     }
 
-    .hero-content h1{
-        font-size:85px;
-    }
-
 }
 
-/* =========================
-PHONE AND SMALL TABLET
-========================= */
+/* ==================================================
+SMALL TABLET
+================================================== */
 
 @media(max-width:900px){
 
     header{
-        height:88px;
-        padding:0 20px;
+        height:86px;
+        padding:0 18px;
     }
 
     .logo img{
-        height:52px;
+        height:50px;
     }
 
     nav{
+        max-width:70%;
         justify-content:flex-end;
         flex-wrap:wrap;
-        max-width:68%;
-        row-gap:4px;
+        gap:4px 12px;
     }
 
     nav a{
-        margin:2px 0 2px 14px;
+        margin:0;
         font-size:10px;
-        letter-spacing:0.6px;
+        letter-spacing:0.5px;
     }
 
     .hero{
         min-height:100svh;
-        padding-top:88px;
+        padding-top:86px;
         background-position:center;
     }
 
@@ -452,15 +471,14 @@ PHONE AND SMALL TABLET
     }
 
     .hero-content p{
-        font-size:clamp(20px,5vw,27px);
         margin-bottom:30px;
+        font-size:clamp(20px,5vw,27px);
     }
 
-    .section,
     .project-slider-section,
-    .cta-section,
-    .why-section{
-        padding:80px 30px;
+    .why-section,
+    .cta-section{
+        padding:80px 24px;
     }
 
     .section-title{
@@ -471,88 +489,156 @@ PHONE AND SMALL TABLET
         grid-template-columns:1fr;
     }
 
+    /*
+    MOBILE PROJECT SLIDER
+
+    The desktop card is completely changed on phones.
+
+    The image uses natural height.
+    The full image is shown.
+    Text sits underneath the image.
+    */
+
+    .slide-wrapper{
+        width:100%;
+        max-width:100%;
+        overflow:hidden;
+    }
+
+    .slide-track{
+        width:100%;
+        align-items:flex-start;
+    }
+
     .slide-panel{
+        min-width:100%;
+        width:100%;
+        flex:0 0 100%;
         padding:0;
     }
 
     .project-highlight{
-        height:clamp(380px,72vw,540px);
+        position:relative !important;
+        width:100% !important;
+        height:auto !important;
+        min-height:0 !important;
+        max-height:none !important;
         margin-top:42px;
-        border-radius:12px;
+        display:flex !important;
+        flex-direction:column !important;
+        background:#111111;
+        border-radius:14px;
+        overflow:hidden;
+    }
+
+    .project-highlight img{
+        position:relative !important;
+        width:100% !important;
+        height:auto !important;
+        min-height:0 !important;
+        max-height:none !important;
+        aspect-ratio:auto !important;
+        object-fit:contain !important;
+        object-position:center !important;
+        flex:none !important;
+        background:#111111;
+    }
+
+    .project-highlight::after{
+        content:none !important;
+        display:none !important;
+        background:none !important;
     }
 
     .project-highlight-text{
-        left:28px;
-        right:28px;
-        bottom:28px;
-        max-width:none;
+        position:relative !important;
+        top:auto !important;
+        left:auto !important;
+        right:auto !important;
+        bottom:auto !important;
+        width:100% !important;
+        max-width:100% !important;
+        flex:none !important;
+        padding:24px 24px 28px;
+        background:#111111;
+        color:#ffffff;
+        overflow:hidden;
     }
 
     .project-highlight-text h3{
-        font-size:clamp(27px,6vw,38px);
+        width:100%;
         margin-bottom:10px;
+        font-size:clamp(25px,5.5vw,36px);
+        line-height:1.2;
+        overflow-wrap:anywhere;
+        word-break:normal;
     }
 
     .project-highlight-text p{
+        width:100%;
+        color:#d6d6d6;
         font-size:15px;
-        line-height:1.55;
+        line-height:1.6;
+        overflow-wrap:anywhere;
     }
 
     .slide-arrow{
-        top:60%;
+        top:57%;
         width:42px;
         height:58px;
-        font-size:45px;
-        color:white;
-        background:rgba(0,0,0,0.35);
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        background:rgba(0,0,0,0.65);
         border-radius:6px;
+        color:#ffffff;
+        font-size:40px;
     }
 
     .left-arrow{
-        left:8px;
+        left:4px;
     }
 
     .right-arrow{
-        right:8px;
+        right:4px;
     }
+
 }
 
-/* =========================
-MOBILE
-========================= */
+/* ==================================================
+PHONE
+================================================== */
 
 @media(max-width:600px){
 
     header{
-        height:76px;
-        padding:0 12px;
+        height:74px;
+        padding:0 10px;
     }
 
     .logo img{
-        height:42px;
+        height:40px;
     }
 
     nav{
-        max-width:74%;
-        line-height:1.1;
+        max-width:75%;
+        gap:4px 8px;
     }
 
     nav a{
-        margin:2px 0 2px 8px;
+        margin:0;
         font-size:8.5px;
-        letter-spacing:0.3px;
+        letter-spacing:0.2px;
     }
 
     .hero{
         min-height:100svh;
-        padding-top:76px;
-        padding-left:18px;
-        padding-right:18px;
+        padding:74px 18px 0;
         background-position:55% center;
     }
 
     .hero-content h1{
-        font-size:clamp(39px,12vw,56px);
+        font-size:clamp(38px,12vw,55px);
         line-height:1;
     }
 
@@ -579,11 +665,10 @@ MOBILE
         font-size:14px;
     }
 
-    .section,
     .project-slider-section,
-    .cta-section,
-    .why-section{
-        padding:68px 18px;
+    .why-section,
+    .cta-section{
+        padding:65px 16px;
     }
 
     .section-title{
@@ -595,40 +680,136 @@ MOBILE
         line-height:1.7;
     }
 
-    .project-highlight{
-        height:430px;
-        margin-top:34px;
+    /*
+    FINAL PHONE PHOTO OVERRIDE
+
+    These !important rules ensure no older desktop rule
+    can force the photo into a fixed-height cropped box.
+    */
+
+    .project-slider-section{
+        overflow:hidden !important;
     }
 
+    .slide-wrapper{
+        width:100% !important;
+        max-width:100% !important;
+        overflow:hidden !important;
+    }
+
+    .slide-track{
+        width:100% !important;
+        display:flex !important;
+        align-items:flex-start !important;
+    }
+
+    .slide-panel{
+        width:100% !important;
+        min-width:100% !important;
+        max-width:100% !important;
+        flex:0 0 100% !important;
+        padding:0 !important;
+        overflow:hidden !important;
+    }
+
+    .project-highlight{
+        position:relative !important;
+        width:100% !important;
+        height:auto !important;
+        min-height:0 !important;
+        max-height:none !important;
+        margin-top:32px !important;
+        display:flex !important;
+        flex-direction:column !important;
+        background:#111111 !important;
+        border-radius:10px !important;
+        overflow:hidden !important;
+    }
+
+    .project-highlight img{
+        position:relative !important;
+        inset:auto !important;
+        width:100% !important;
+        height:auto !important;
+        min-height:0 !important;
+        max-height:none !important;
+        aspect-ratio:auto !important;
+        object-fit:contain !important;
+        object-position:center !important;
+        transform:none !important;
+        flex:none !important;
+        background:#111111 !important;
+    }
+
+    .project-highlight::before,
     .project-highlight::after{
-        background:linear-gradient(
-            to top,
-            rgba(0,0,0,0.95) 0%,
-            rgba(0,0,0,0.55) 45%,
-            rgba(0,0,0,0.08) 75%
-        );
+        content:none !important;
+        display:none !important;
+        background:none !important;
     }
 
     .project-highlight-text{
-        left:20px;
-        right:20px;
-        bottom:22px;
+        position:relative !important;
+        inset:auto !important;
+        top:auto !important;
+        left:auto !important;
+        right:auto !important;
+        bottom:auto !important;
+        width:100% !important;
+        max-width:100% !important;
+        height:auto !important;
+        margin:0 !important;
+        padding:20px 18px 24px !important;
+        transform:none !important;
+        background:#111111 !important;
+        color:#ffffff !important;
+        overflow:hidden !important;
     }
 
     .project-highlight-text h3{
-        font-size:27px;
+        width:100% !important;
+        max-width:100% !important;
+        margin:0 0 10px !important;
+        color:#ffffff !important;
+        font-size:24px !important;
+        line-height:1.2 !important;
+        white-space:normal !important;
+        overflow-wrap:anywhere !important;
+        word-break:normal !important;
     }
 
     .project-highlight-text p{
-        font-size:14px;
-        line-height:1.5;
+        width:100% !important;
+        max-width:100% !important;
+        margin:0 !important;
+        color:#d6d6d6 !important;
+        font-size:14px !important;
+        line-height:1.55 !important;
+        white-space:normal !important;
+        overflow-wrap:anywhere !important;
     }
 
     .slide-arrow{
-        top:61%;
-        width:36px;
-        height:52px;
-        font-size:36px;
+        top:55% !important;
+        width:34px !important;
+        height:48px !important;
+        padding:0 !important;
+        display:flex !important;
+        justify-content:center !important;
+        align-items:center !important;
+        background:rgba(0,0,0,0.70) !important;
+        border-radius:5px !important;
+        color:#ffffff !important;
+        font-size:30px !important;
+        line-height:1 !important;
+    }
+
+    .left-arrow{
+        left:2px !important;
+    }
+
+    .right-arrow{
+        right:2px !important;
     }
 
     .why-card{
@@ -646,30 +827,38 @@ MOBILE
     .cta-section p{
         font-size:16px;
     }
+
 }
+
+/* ==================================================
+VERY SMALL PHONES
+================================================== */
 
 @media(max-width:380px){
 
+    .logo img{
+        height:36px;
+    }
+
+    nav{
+        gap:3px 6px;
+    }
+
     nav a{
         font-size:7.5px;
-        margin-left:6px;
     }
 
-    .logo img{
-        height:38px;
-    }
-
-    .project-highlight{
-        height:390px;
+    .project-highlight-text h3{
+        font-size:21px !important;
     }
 
 }
 
-/* =========================
+/* ==================================================
 PRINT
-========================= */
+================================================== */
 
-@media print {
+@media print{
 
     header,
     nav,
@@ -679,8 +868,8 @@ PRINT
     }
 
     body{
-        background:white !important;
-        color:black !important;
+        background:#ffffff !important;
+        color:#000000 !important;
         overflow:visible !important;
     }
 
@@ -692,7 +881,11 @@ PRINT
 
     .hero-content h1,
     .hero-content p{
-        color:black !important;
+        color:#000000 !important;
+    }
+
+    .slide-wrapper{
+        overflow:visible !important;
     }
 
     .slide-track{
@@ -702,15 +895,20 @@ PRINT
 
     .slide-panel{
         min-width:auto !important;
+        width:100% !important;
         padding:0 !important;
     }
 
     .project-highlight{
         height:auto !important;
+        margin-top:30px !important;
+        background:#ffffff !important;
+        border-radius:0 !important;
         box-shadow:none !important;
     }
 
     .project-highlight img{
+        width:100% !important;
         height:auto !important;
         max-height:260px !important;
         object-fit:contain !important;
@@ -722,16 +920,15 @@ PRINT
 
     .project-highlight-text{
         position:relative !important;
-        left:auto !important;
-        right:auto !important;
-        bottom:auto !important;
-        color:black !important;
-        padding:15px 0 25px;
+        inset:auto !important;
+        padding:15px 0 25px !important;
+        background:#ffffff !important;
+        color:#000000 !important;
     }
 
     .project-highlight-text h3,
     .project-highlight-text p{
-        color:black !important;
+        color:#000000 !important;
     }
 
 }
@@ -745,18 +942,41 @@ PRINT
 <header>
 
     <div class="logo">
-        <img src="Images/logo.png.png" alt="STRUKTURA Logo">
+
+        <img
+            src="Images/logo.png.png"
+            alt="STRUKTURA Group logo"
+        >
+
     </div>
 
     <nav>
-        <a class="active" href="index.html">HOME</a>
-        <a href="services.html">SERVICES</a>
-        <a href="projects.html">PROJECTS</a>
-        <a href="about.html">ABOUT</a>
-        <a href="contact.html">CONTACT</a>
+
+        <a class="active" href="index.html">
+            HOME
+        </a>
+
+        <a href="services.html">
+            SERVICES
+        </a>
+
+        <a href="projects.html">
+            PROJECTS
+        </a>
+
+        <a href="about.html">
+            ABOUT
+        </a>
+
+        <a href="contact.html">
+            CONTACT
+        </a>
+
     </nav>
 
 </header>
+
+<main>
 
 <section class="hero">
 
@@ -774,11 +994,17 @@ PRINT
 
         <div class="hero-buttons">
 
-            <a href="projects.html" class="btn">
+            <a
+                href="projects.html"
+                class="btn"
+            >
                 VIEW PROJECTS
             </a>
 
-            <a href="services.html#safety-first" class="btn">
+            <a
+                href="services.html#safety-first"
+                class="btn"
+            >
                 SAFETY FIRST
             </a>
 
@@ -795,21 +1021,25 @@ PRINT
     </h2>
 
     <p class="section-text">
-        Controlled unrestricted demolition, structural dismantling and industrial infrastructure projects delivered across active operational environments.
+        Controlled unrestricted demolition, structural dismantling
+        and industrial infrastructure projects delivered across
+        active operational environments.
     </p>
 
     <button
         class="slide-arrow left-arrow"
+        type="button"
         onclick="changeSlide(-1)"
-        aria-label="Previous project"
+        aria-label="View previous project"
     >
         &#10094;
     </button>
 
     <button
         class="slide-arrow right-arrow"
+        type="button"
         onclick="changeSlide(1)"
-        aria-label="Next project"
+        aria-label="View next project"
     >
         &#10095;
     </button>
@@ -818,13 +1048,15 @@ PRINT
 
         <div class="slide-track">
 
-            <div class="slide-panel">
+            <!-- PROJECT ONE -->
+
+            <article class="slide-panel">
 
                 <div class="project-highlight">
 
                     <img
                         src="Images/project1.jpg.JPG"
-                        alt="Mine Load Out Infrastructure Removal"
+                        alt="Mine load out infrastructure removal"
                     >
 
                     <div class="project-highlight-text">
@@ -834,23 +1066,27 @@ PRINT
                         </h3>
 
                         <p>
-                            Structural dismantling using controlled crane lift sequencing,
-                            staged demolition methodologies and detailed project coordination.
+                            Structural dismantling using controlled
+                            crane lift sequencing, staged demolition
+                            methodologies and detailed project
+                            coordination.
                         </p>
 
                     </div>
 
                 </div>
 
-            </div>
+            </article>
 
-            <div class="slide-panel">
+            <!-- PROJECT TWO -->
+
+            <article class="slide-panel">
 
                 <div class="project-highlight">
 
                     <img
                         src="Images/gantry12.png"
-                        alt="Gantry Removal Works"
+                        alt="Gantry removal works"
                     >
 
                     <div class="project-highlight-text">
@@ -860,23 +1096,27 @@ PRINT
                         </h3>
 
                         <p>
-                            Controlled conveyor gantry removals completed within active
-                            industrial environments using engineered lift planning.
+                            Controlled conveyor gantry removals
+                            completed within active industrial
+                            environments using engineered lift
+                            planning.
                         </p>
 
                     </div>
 
                 </div>
 
-            </div>
+            </article>
 
-            <div class="slide-panel">
+            <!-- PROJECT THREE -->
+
+            <article class="slide-panel">
 
                 <div class="project-highlight">
 
                     <img
                         src="Images/IMG_5774 (1).jpeg"
-                        alt="Structural Deconstruction"
+                        alt="Structural silo deconstruction"
                     >
 
                     <div class="project-highlight-text">
@@ -893,7 +1133,7 @@ PRINT
 
                 </div>
 
-            </div>
+            </article>
 
         </div>
 
@@ -908,58 +1148,81 @@ PRINT
     </h2>
 
     <p class="section-text">
-        Hands-on unrestricted demolition supervision and industrial project support built around controlled sequencing, planning and site delivery.
+        Hands-on unrestricted demolition supervision and industrial
+        project support built around controlled sequencing, planning
+        and site delivery.
     </p>
 
     <div class="why-grid">
 
-        <div class="why-card">
+        <article class="why-card">
 
-            <div class="why-icon">⚙️</div>
+            <div class="why-icon">
+                ⚙️
+            </div>
 
-            <h3>Controlled Delivery</h3>
-
-            <p>
-                Structured planning and operational coordination to support safe and efficient project delivery.
-            </p>
-
-        </div>
-
-        <div class="why-card">
-
-            <div class="why-icon">🏗️</div>
-
-            <h3>Industrial Experience</h3>
+            <h3>
+                Controlled Delivery
+            </h3>
 
             <p>
-                Over 100 years combined experience working across a range of industrial and heavy infrastructure environments.
+                Structured planning and operational coordination
+                to support safe and efficient project delivery.
             </p>
 
-        </div>
+        </article>
 
-        <div class="why-card">
+        <article class="why-card">
 
-            <div class="why-icon">📋</div>
+            <div class="why-icon">
+                🏗️
+            </div>
 
-            <h3>Planning Support</h3>
+            <h3>
+                Industrial Experience
+            </h3>
 
             <p>
-                Practical support with project planning, sequencing and site coordination activities.
+                Over 100 years combined experience working across
+                a range of industrial and heavy infrastructure
+                environments.
             </p>
 
-        </div>
+        </article>
 
-        <div class="why-card">
+        <article class="why-card">
 
-            <div class="why-icon">👷</div>
+            <div class="why-icon">
+                📋
+            </div>
 
-            <h3>Site Focused</h3>
+            <h3>
+                Planning Support
+            </h3>
 
             <p>
-                Effective site communication and coordination between supervisors, contractors and project teams.
+                Practical support with project planning, sequencing
+                and site coordination activities.
             </p>
 
-        </div>
+        </article>
+
+        <article class="why-card">
+
+            <div class="why-icon">
+                👷
+            </div>
+
+            <h3>
+                Site Focused
+            </h3>
+
+            <p>
+                Effective site communication and coordination
+                between supervisors, contractors and project teams.
+            </p>
+
+        </article>
 
     </div>
 
@@ -972,14 +1235,20 @@ PRINT
     </h2>
 
     <p>
-        Contact STRUKTURA Group for demolition and structural deconstruction support.
+        Contact STRUKTURA Group for demolition and structural
+        deconstruction support.
     </p>
 
-    <a href="contact.html" class="btn">
+    <a
+        href="contact.html"
+        class="btn"
+    >
         CONTACT US
     </a>
 
 </section>
+
+</main>
 
 <footer>
     © 2026 STRUKTURA Group | Newcastle NSW
@@ -989,29 +1258,110 @@ PRINT
 
 let currentSlide = 0;
 
+const track = document.querySelector(".slide-track");
+
+const slides = document.querySelectorAll(".slide-panel");
+
 function showSlide(index){
 
-    const track = document.querySelector(".slide-track");
-    const totalSlides = document.querySelectorAll(".slide-panel").length;
-
     if(index < 0){
-        currentSlide = totalSlides - 1;
+
+        currentSlide = slides.length - 1;
+
     }
-    else if(index >= totalSlides){
+    else if(index >= slides.length){
+
         currentSlide = 0;
+
     }
     else{
+
         currentSlide = index;
+
     }
 
-    track.style.transform = `translateX(-${currentSlide * 100}%)`;
+    track.style.transform =
+        `translateX(-${currentSlide * 100}%)`;
+
 }
 
 function changeSlide(direction){
+
     showSlide(currentSlide + direction);
+
 }
+
+/* ==================================================
+TOUCH SWIPE SUPPORT
+================================================== */
+
+let touchStartX = 0;
+
+let touchEndX = 0;
+
+const slider = document.querySelector(".slide-wrapper");
+
+slider.addEventListener(
+    "touchstart",
+    function(event){
+
+        touchStartX = event.changedTouches[0].screenX;
+
+    },
+    {
+        passive:true
+    }
+);
+
+slider.addEventListener(
+    "touchend",
+    function(event){
+
+        touchEndX = event.changedTouches[0].screenX;
+
+        handleSwipe();
+
+    },
+    {
+        passive:true
+    }
+);
+
+function handleSwipe(){
+
+    const swipeDistance = touchStartX - touchEndX;
+
+    if(swipeDistance > 50){
+
+        changeSlide(1);
+
+    }
+
+    if(swipeDistance < -50){
+
+        changeSlide(-1);
+
+    }
+
+}
+
+/* ==================================================
+RESET SLIDER WHEN SCREEN SIZE CHANGES
+================================================== */
+
+window.addEventListener(
+    "resize",
+    function(){
+
+        showSlide(currentSlide);
+
+    }
+);
+
+showSlide(0);
 
 </script>
 
 </body>
+
 </html>
