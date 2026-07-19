@@ -9,6 +9,7 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="icon" href="struktura_favicon.ico">
+
 <style>
 
 /* =========================
@@ -33,6 +34,10 @@ body{
     line-height:1.6;
 }
 
+img{
+    max-width:100%;
+}
+
 /* =========================
 HEADER
 ========================= */
@@ -44,8 +49,7 @@ header{
     width:100%;
     height:114px;
     padding:0 55px;
-    background:rgba(0,0,0,1);
-    backdrop-filter:blur(6px);
+    background:#000;
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -55,6 +59,7 @@ header{
 .logo{
     display:flex;
     align-items:center;
+    flex-shrink:0;
 }
 
 .logo img{
@@ -84,7 +89,7 @@ nav a{
 
 nav a:hover,
 nav a.active{
-    color:#d50000 !important;
+    color:#d50000;
 }
 
 /* =========================
@@ -94,6 +99,8 @@ HERO
 .hero{
     min-height:100vh;
     padding-top:114px;
+    padding-left:20px;
+    padding-right:20px;
 
     background:
     linear-gradient(rgba(0,0,0,0.60), rgba(0,0,0,0.78)),
@@ -107,13 +114,11 @@ HERO
     justify-content:center;
     align-items:center;
     text-align:center;
-
-    padding-left:20px;
-    padding-right:20px;
 }
 
 .hero-content{
     max-width:1200px;
+    width:100%;
 }
 
 .hero-content h1{
@@ -170,16 +175,6 @@ BUTTONS
     transform:translateY(-2px);
 }
 
-.btn-outline{
-    background:white;
-    
-}
-
-.btn-outline:hover{
-    background:#ff1a1a;
-    color:black;
-}
-
 /* =========================
 SECTIONS
 ========================= */
@@ -194,6 +189,7 @@ SECTIONS
     font-weight:800;
     margin-bottom:25px;
     color:#111;
+    line-height:1.15;
 }
 
 .section-text{
@@ -273,18 +269,26 @@ PROJECT HIGHLIGHTS
     width:100%;
     height:100%;
     object-fit:cover;
+    object-position:center;
+    display:block;
 }
 
 .project-highlight::after{
     content:"";
     position:absolute;
     inset:0;
-    background:linear-gradient(to top, rgba(0,0,0,0.88), transparent);
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,0.9) 0%,
+        rgba(0,0,0,0.45) 45%,
+        rgba(0,0,0,0.05) 75%
+    );
 }
 
 .project-highlight-text{
     position:absolute;
     left:55px;
+    right:55px;
     bottom:55px;
     max-width:700px;
     z-index:2;
@@ -295,6 +299,7 @@ PROJECT HIGHLIGHTS
     font-size:48px;
     margin-bottom:16px;
     font-weight:800;
+    line-height:1.15;
 }
 
 .project-highlight-text p{
@@ -375,6 +380,7 @@ CTA
     font-size:50px;
     margin-bottom:18px;
     color:white;
+    line-height:1.2;
 }
 
 .cta-section p{
@@ -386,21 +392,284 @@ CTA
 footer{
     background:black;
     text-align:center;
-    padding:35px;
+    padding:35px 20px;
     color:#777;
     font-size:14px;
 }
 
 /* =========================
-PRINT ONLY FIX
+TABLET
+========================= */
+
+@media(max-width:1100px){
+
+    .why-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .hero-content h1{
+        font-size:85px;
+    }
+
+}
+
+/* =========================
+PHONE AND SMALL TABLET
+========================= */
+
+@media(max-width:900px){
+
+    header{
+        height:88px;
+        padding:0 20px;
+    }
+
+    .logo img{
+        height:52px;
+    }
+
+    nav{
+        justify-content:flex-end;
+        flex-wrap:wrap;
+        max-width:68%;
+        row-gap:4px;
+    }
+
+    nav a{
+        margin:2px 0 2px 14px;
+        font-size:10px;
+        letter-spacing:0.6px;
+    }
+
+    .hero{
+        min-height:100svh;
+        padding-top:88px;
+        background-position:center;
+    }
+
+    .hero-content h1{
+        font-size:clamp(46px,11vw,72px);
+    }
+
+    .hero-content p{
+        font-size:clamp(20px,5vw,27px);
+        margin-bottom:30px;
+    }
+
+    .section,
+    .project-slider-section,
+    .cta-section,
+    .why-section{
+        padding:80px 30px;
+    }
+
+    .section-title{
+        font-size:42px;
+    }
+
+    .why-grid{
+        grid-template-columns:1fr;
+    }
+
+    .slide-panel{
+        padding:0;
+    }
+
+    .project-highlight{
+        height:clamp(380px,72vw,540px);
+        margin-top:42px;
+        border-radius:12px;
+    }
+
+    .project-highlight-text{
+        left:28px;
+        right:28px;
+        bottom:28px;
+        max-width:none;
+    }
+
+    .project-highlight-text h3{
+        font-size:clamp(27px,6vw,38px);
+        margin-bottom:10px;
+    }
+
+    .project-highlight-text p{
+        font-size:15px;
+        line-height:1.55;
+    }
+
+    .slide-arrow{
+        top:60%;
+        width:42px;
+        height:58px;
+        font-size:45px;
+        color:white;
+        background:rgba(0,0,0,0.35);
+        border-radius:6px;
+    }
+
+    .left-arrow{
+        left:8px;
+    }
+
+    .right-arrow{
+        right:8px;
+    }
+}
+
+/* =========================
+MOBILE
+========================= */
+
+@media(max-width:600px){
+
+    header{
+        height:76px;
+        padding:0 12px;
+    }
+
+    .logo img{
+        height:42px;
+    }
+
+    nav{
+        max-width:74%;
+        line-height:1.1;
+    }
+
+    nav a{
+        margin:2px 0 2px 8px;
+        font-size:8.5px;
+        letter-spacing:0.3px;
+    }
+
+    .hero{
+        min-height:100svh;
+        padding-top:76px;
+        padding-left:18px;
+        padding-right:18px;
+        background-position:55% center;
+    }
+
+    .hero-content h1{
+        font-size:clamp(39px,12vw,56px);
+        line-height:1;
+    }
+
+    .hero-content p{
+        font-size:20px;
+    }
+
+    .hero-line{
+        width:85px;
+        height:4px;
+        margin-bottom:22px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+        align-items:center;
+        gap:12px;
+    }
+
+    .btn{
+        width:min(100%,280px);
+        padding:14px 22px;
+        text-align:center;
+        font-size:14px;
+    }
+
+    .section,
+    .project-slider-section,
+    .cta-section,
+    .why-section{
+        padding:68px 18px;
+    }
+
+    .section-title{
+        font-size:34px;
+    }
+
+    .section-text{
+        font-size:16px;
+        line-height:1.7;
+    }
+
+    .project-highlight{
+        height:430px;
+        margin-top:34px;
+    }
+
+    .project-highlight::after{
+        background:linear-gradient(
+            to top,
+            rgba(0,0,0,0.95) 0%,
+            rgba(0,0,0,0.55) 45%,
+            rgba(0,0,0,0.08) 75%
+        );
+    }
+
+    .project-highlight-text{
+        left:20px;
+        right:20px;
+        bottom:22px;
+    }
+
+    .project-highlight-text h3{
+        font-size:27px;
+    }
+
+    .project-highlight-text p{
+        font-size:14px;
+        line-height:1.5;
+    }
+
+    .slide-arrow{
+        top:61%;
+        width:36px;
+        height:52px;
+        font-size:36px;
+    }
+
+    .why-card{
+        padding:34px 26px;
+    }
+
+    .why-card h3{
+        font-size:27px;
+    }
+
+    .cta-section h2{
+        font-size:34px;
+    }
+
+    .cta-section p{
+        font-size:16px;
+    }
+}
+
+@media(max-width:380px){
+
+    nav a{
+        font-size:7.5px;
+        margin-left:6px;
+    }
+
+    .logo img{
+        height:38px;
+    }
+
+    .project-highlight{
+        height:390px;
+    }
+
+}
+
+/* =========================
+PRINT
 ========================= */
 
 @media print {
-
-    @page{
-        size:A4;
-        margin:12mm;
-    }
 
     header,
     nav,
@@ -413,72 +682,17 @@ PRINT ONLY FIX
         background:white !important;
         color:black !important;
         overflow:visible !important;
-        zoom:75%;
     }
 
     .hero{
         min-height:auto !important;
-        height:auto !important;
         padding:40px 20px !important;
         background:none !important;
-        display:block !important;
-        text-align:center !important;
     }
 
-    .hero-content{
-        max-width:100% !important;
-    }
-
-    .hero-content h1{
-        font-size:54px !important;
-        color:black !important;
-    }
-
-    .hero-content h1 span{
-        color:black !important;
-    }
-
-    .hero-line{
-        background:black !important;
-    }
-
+    .hero-content h1,
     .hero-content p{
         color:black !important;
-        font-size:24px !important;
-        margin-bottom:20px !important;
-    }
-
-    .section-title,
-    .section-text,
-    .project-highlight-text h3,
-    .project-highlight-text p,
-    .why-card h3,
-    .why-card p,
-    .cta-section h2,
-    .cta-section p{
-        color:black !important;
-    }
-
-    .project-slider-section,
-    .why-section,
-    .cta-section,
-    .section{
-        padding:35px 20px !important;
-        page-break-inside:avoid;
-        background:white !important;
-    }
-
-    .section-title{
-        font-size:38px !important;
-    }
-
-    .section-text{
-        font-size:17px !important;
-    }
-
-    .slide-wrapper{
-        overflow:visible !important;
-        max-width:100% !important;
     }
 
     .slide-track{
@@ -487,28 +701,19 @@ PRINT ONLY FIX
     }
 
     .slide-panel{
-        display:block !important;
         min-width:auto !important;
         padding:0 !important;
-        page-break-inside:avoid;
     }
 
     .project-highlight{
         height:auto !important;
-        margin-top:30px !important;
         box-shadow:none !important;
-        border-radius:0 !important;
-        page-break-inside:avoid;
-        background:white !important;
-        overflow:visible !important;
     }
 
     .project-highlight img{
-        width:100% !important;
         height:auto !important;
         max-height:260px !important;
         object-fit:contain !important;
-        display:block !important;
     }
 
     .project-highlight::after{
@@ -518,161 +723,16 @@ PRINT ONLY FIX
     .project-highlight-text{
         position:relative !important;
         left:auto !important;
+        right:auto !important;
         bottom:auto !important;
-        padding:15px 0 25px !important;
         color:black !important;
-        max-width:100% !important;
+        padding:15px 0 25px;
     }
 
-    .project-highlight-text h3{
-        font-size:26px !important;
-    }
-
+    .project-highlight-text h3,
     .project-highlight-text p{
-        font-size:16px !important;
-    }
-
-    .why-grid{
-        display:grid !important;
-        grid-template-columns:1fr 1fr !important;
-        gap:18px !important;
-        margin-top:30px !important;
-    }
-
-    .why-card{
-        box-shadow:none !important;
-        border:1px solid #ccc !important;
-        page-break-inside:avoid;
-        padding:25px !important;
-    }
-
-    .why-icon{
-        display:none !important;
-    }
-
-    .why-card h3{
-        font-size:22px !important;
-    }
-
-    .why-card p{
-        font-size:15px !important;
-    }
-
-    footer{
-        background:white !important;
         color:black !important;
-        padding:20px !important;
     }
-
-    *{
-        box-shadow:none !important;
-        text-shadow:none !important;
-    }
-
-    a{
-        color:black !important;
-        text-decoration:none !important;
-    }
-}
-
-/* =========================
-MOBILE
-========================= */
-
-@media(max-width:1100px){
-
-    .why-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-}
-
-@media(max-width:768px){
-
-header{
-    height:auto;
-    flex-direction:column;
-    gap:12px;
-    padding:18px;
-}
-
-.logo img{
-    height:55px;
-}
-
-nav{
-    flex-wrap:wrap;
-    justify-content:center;
-}
-
-nav a{
-    margin:5px 10px;
-    font-size:12px;
-}
-
-.hero{
-    padding-top:150px;
-}
-
-.hero-content h1{
-    font-size:58px;
-}
-
-.hero-content p{
-    font-size:24px;
-}
-
-.hero-line{
-    width:90px;
-}
-
-.section,
-.project-slider-section,
-.cta-section,
-.why-section{
-    padding:80px 30px;
-}
-
-.section-title{
-    font-size:40px;
-}
-
-.why-grid{
-    grid-template-columns:1fr;
-}
-
-.slide-panel{
-    padding:0;
-}
-
-.slide-arrow{
-    font-size:55px;
-}
-
-.left-arrow{
-    left:5px;
-}
-
-.right-arrow{
-    right:5px;
-}
-
-.project-highlight{
-    height:200px;
-}
-
-.project-highlight-text{
-    left:25px;
-    bottom:25px;
-}
-
-.project-highlight-text h3{
-    font-size:30px;
-}
-
-.project-highlight-text p{
-    font-size:16px;
-}
 
 }
 
@@ -684,228 +744,245 @@ nav a{
 
 <header>
 
-<div class="logo">
-    <img src="Images/logo.png.png" alt="STRUKTURA Logo">
-</div>
+    <div class="logo">
+        <img src="Images/logo.png.png" alt="STRUKTURA Logo">
+    </div>
 
-<nav>
-    <a class="active" href="index.html">HOME</a>
-    <a href="services.html">SERVICES</a>
-    <a href="projects.html">PROJECTS</a>
-    <a href="about.html">ABOUT</a>
-    <a href="contact.html">CONTACT</a>
-</nav>
+    <nav>
+        <a class="active" href="index.html">HOME</a>
+        <a href="services.html">SERVICES</a>
+        <a href="projects.html">PROJECTS</a>
+        <a href="about.html">ABOUT</a>
+        <a href="contact.html">CONTACT</a>
+    </nav>
 
 </header>
 
 <section class="hero">
 
-<div class="hero-content">
+    <div class="hero-content">
 
-<h1>
-    <span>STRUKTURA</span> Group
-</h1>
+        <h1>
+            <span>STRUKTURA</span> Group
+        </h1>
 
-<div class="hero-line"></div>
+        <div class="hero-line"></div>
 
-<p>
-    Controlled. Calculated. Delivered.
-</p>
+        <p>
+            Controlled. Calculated. Delivered.
+        </p>
 
-<div class="hero-buttons">
+        <div class="hero-buttons">
 
-    <a href="projects.html" class="btn">
-        VIEW PROJECTS
-    </a>
+            <a href="projects.html" class="btn">
+                VIEW PROJECTS
+            </a>
 
-    <a href="services.html#safety-first" class="btn btn-outline">
-        SAFETY FIRST
-    </a>
+            <a href="services.html#safety-first" class="btn">
+                SAFETY FIRST
+            </a>
 
-</div>
+        </div>
 
-</div>
+    </div>
 
 </section>
 
 <section class="project-slider-section">
 
-<h2 class="section-title">
-    Project Highlights
-</h2>
+    <h2 class="section-title">
+        Project Highlights
+    </h2>
 
-<p class="section-text">
-    Controlled unrestricted demolition, structural dismantling and industrial infrastructure projects delivered across active operational environments.
-</p>
+    <p class="section-text">
+        Controlled unrestricted demolition, structural dismantling and industrial infrastructure projects delivered across active operational environments.
+    </p>
 
-<button class="slide-arrow left-arrow" onclick="changeSlide(-1)">
-    &#10094;
-</button>
+    <button
+        class="slide-arrow left-arrow"
+        onclick="changeSlide(-1)"
+        aria-label="Previous project"
+    >
+        &#10094;
+    </button>
 
-<button class="slide-arrow right-arrow" onclick="changeSlide(1)">
-    &#10095;
-</button>
+    <button
+        class="slide-arrow right-arrow"
+        onclick="changeSlide(1)"
+        aria-label="Next project"
+    >
+        &#10095;
+    </button>
 
-<div class="slide-wrapper">
+    <div class="slide-wrapper">
 
-<div class="slide-track">
+        <div class="slide-track">
 
-<div class="slide-panel">
+            <div class="slide-panel">
 
-<div class="project-highlight">
+                <div class="project-highlight">
 
-<img src="Images/project1.jpg.JPG" alt="Mine Load Out Infrastructure Removal">
+                    <img
+                        src="Images/project1.jpg.JPG"
+                        alt="Mine Load Out Infrastructure Removal"
+                    >
 
-<div class="project-highlight-text">
+                    <div class="project-highlight-text">
 
-<h3>
-    Mine Load Out Infrastructure Removal
-</h3>
+                        <h3>
+                            Mine Load Out Infrastructure Removal
+                        </h3>
 
-<p>
-    Structural dismantling using controlled crane lift sequencing,
-    staged demolition methodologies and detailed project coordination.
-</p>
+                        <p>
+                            Structural dismantling using controlled crane lift sequencing,
+                            staged demolition methodologies and detailed project coordination.
+                        </p>
 
-</div>
+                    </div>
 
-</div>
+                </div>
 
-</div>
+            </div>
 
-<div class="slide-panel">
+            <div class="slide-panel">
 
-<div class="project-highlight">
+                <div class="project-highlight">
 
-<img src="Images/gantry12.png" alt="Gantry Removal Works">
+                    <img
+                        src="Images/gantry12.png"
+                        alt="Gantry Removal Works"
+                    >
 
-<div class="project-highlight-text">
+                    <div class="project-highlight-text">
 
-<h3>
-    Gantry Removal Works
-</h3>
+                        <h3>
+                            Gantry Removal Works
+                        </h3>
 
-<p>
-    Controlled conveyor gantry removals completed within active
-    industrial environments using engineered lift planning.
-</p>
+                        <p>
+                            Controlled conveyor gantry removals completed within active
+                            industrial environments using engineered lift planning.
+                        </p>
 
-</div>
+                    </div>
 
-</div>
+                </div>
 
-</div>
+            </div>
 
-<div class="slide-panel">
+            <div class="slide-panel">
 
-<div class="project-highlight">
+                <div class="project-highlight">
 
-<img src="Images/IMG_5774 (1).jpeg" alt="Structural Deconstruction">
+                    <img
+                        src="Images/IMG_5774 (1).jpeg"
+                        alt="Structural Deconstruction"
+                    >
 
-<div class="project-highlight-text">
+                    <div class="project-highlight-text">
 
-<h3>
-    Structural Deconstruction
-</h3>
+                        <h3>
+                            Structural Deconstruction
+                        </h3>
 
-<p>
-    Coordinated removal of silos.
-</p>
+                        <p>
+                            Coordinated removal of silos.
+                        </p>
 
-</div>
+                    </div>
 
-</div>
+                </div>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
-</div>
+    </div>
 
 </section>
 
 <section class="why-section">
 
-<h2 class="section-title">
-    Why STRUKTURA
-</h2>
+    <h2 class="section-title">
+        Why STRUKTURA
+    </h2>
 
-<p class="section-text">
-    Hands-on unrestricted demolition supervision and industrial project support built around controlled sequencing, planning and site delivery.
-</p>
+    <p class="section-text">
+        Hands-on unrestricted demolition supervision and industrial project support built around controlled sequencing, planning and site delivery.
+    </p>
 
-<div class="why-grid">
+    <div class="why-grid">
 
-<div class="why-card">
+        <div class="why-card">
 
-<div class="why-icon">⚙️</div>
+            <div class="why-icon">⚙️</div>
 
-<h3>Controlled Delivery</h3>
+            <h3>Controlled Delivery</h3>
 
-<p>
-    Structured planning and operational coordination to support safe and efficient project delivery.
-</p>
+            <p>
+                Structured planning and operational coordination to support safe and efficient project delivery.
+            </p>
 
-</div>
+        </div>
 
-<div class="why-card">
+        <div class="why-card">
 
-<div class="why-icon">🏗️</div>
+            <div class="why-icon">🏗️</div>
 
-<h3>Industrial Experience</h3>
+            <h3>Industrial Experience</h3>
 
-<p>
-   Over 100 Years combined experience working across a range of industrial and heavy infrastructure environments.
-</p>
+            <p>
+                Over 100 years combined experience working across a range of industrial and heavy infrastructure environments.
+            </p>
 
-</div>
+        </div>
 
-<div class="why-card">
+        <div class="why-card">
 
-<div class="why-icon">📋</div>
+            <div class="why-icon">📋</div>
 
-<h3>Planning Support</h3>
+            <h3>Planning Support</h3>
 
-<p>
-    Practical support with project planning, sequencing and site coordination activities.
-</p>
+            <p>
+                Practical support with project planning, sequencing and site coordination activities.
+            </p>
 
-</div>
+        </div>
 
-<div class="why-card">
+        <div class="why-card">
 
-<div class="why-icon">👷</div>
+            <div class="why-icon">👷</div>
 
-<h3>Site Focused</h3>
+            <h3>Site Focused</h3>
 
-<p>
-    Effective site communication and coordination between supervisors, contractors and project teams.
-</p>
+            <p>
+                Effective site communication and coordination between supervisors, contractors and project teams.
+            </p>
 
-</div>
+        </div>
 
-</div>
+    </div>
 
 </section>
 
 <section class="cta-section">
 
-<h2>
-    Ready To Discuss Your Next Project?
-</h2>
+    <h2>
+        Ready To Discuss Your Next Project?
+    </h2>
 
-<p>
-    Contact STRUKTURA Group for demolition and structural deconstruction support.
-</p>
+    <p>
+        Contact STRUKTURA Group for demolition and structural deconstruction support.
+    </p>
 
-<a href="contact.html" class="btn">
-    CONTACT US
-</a>
+    <a href="contact.html" class="btn">
+        CONTACT US
+    </a>
 
 </section>
 
 <footer>
-© 2026 STRUKTURA Group | Newcastle NSW
+    © 2026 STRUKTURA Group | Newcastle NSW
 </footer>
 
 <script>
@@ -914,25 +991,24 @@ let currentSlide = 0;
 
 function showSlide(index){
 
-const track = document.querySelector('.slide-track');
-const totalSlides = document.querySelectorAll('.slide-panel').length;
+    const track = document.querySelector(".slide-track");
+    const totalSlides = document.querySelectorAll(".slide-panel").length;
 
-if(index < 0){
-    currentSlide = totalSlides - 1;
-}
-else if(index >= totalSlides){
-    currentSlide = 0;
-}
-else{
-    currentSlide = index;
-}
+    if(index < 0){
+        currentSlide = totalSlides - 1;
+    }
+    else if(index >= totalSlides){
+        currentSlide = 0;
+    }
+    else{
+        currentSlide = index;
+    }
 
-track.style.transform = `translateX(-${currentSlide * 100}%)`;
-
+    track.style.transform = `translateX(-${currentSlide * 100}%)`;
 }
 
 function changeSlide(direction){
-showSlide(currentSlide + direction);
+    showSlide(currentSlide + direction);
 }
 
 </script>
